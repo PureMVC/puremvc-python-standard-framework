@@ -8,10 +8,9 @@ Release Date: 03/13/08
       Author: Toby de Havilland <toby.de.havilland@puremvc.org>
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
-0.3 - Complete rewrite with unit tests and documentation 
+0.3 - Complete rewrite with unit tests and documentation by Toby.
 
-0.2 - Current state. Refer to http://forums.puremvc.org/index.php?board=18.0
-	  to pick up on the development of this port.
+0.2 - Current state of port by Nathan. 
 
 0.1 - Initial project structure created in repository - CLH
 
