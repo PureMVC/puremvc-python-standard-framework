@@ -3,8 +3,6 @@
 *  if you have moved any directories, or installed puremvc into site packages
 *  then modify the following in conjuction with your envoronment 
 """
-import sys
-sys.path.append("../src")
 
 import unittest
 from core import controller,model,view
