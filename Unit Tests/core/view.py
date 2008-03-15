@@ -1,10 +1,10 @@
 import unittest
 	
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
-import org.puremvc.python.patterns.proxy
-import org.puremvc.python.patterns.mediator
-import org.puremvc.python.core
+import puremvc.interfaces
+import puremvc.patterns.observer
+import puremvc.patterns.proxy
+import puremvc.patterns.mediator
+import puremvc.core
 import utils.view
 
 class ViewTest(unittest.TestCase):
@@ -19,20 +19,20 @@ class ViewTest(unittest.TestCase):
 	NOTE3 = "note3"
 
 	def __cleanup(self):
-		org.puremvc.python.core.View.getInstance().removeMediator(utils.view.ViewTestMediator.NAME)
-		org.puremvc.python.core.View.getInstance().removeMediator(utils.view.ViewTestMediator2.NAME)
-		org.puremvc.python.core.View.getInstance().removeMediator(utils.view.ViewTestMediator3.NAME)
-		org.puremvc.python.core.View.getInstance().removeMediator(utils.view.ViewTestMediator4.NAME)
+		puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator.NAME)
+		puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator2.NAME)
+		puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator3.NAME)
+		puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator4.NAME)
 	
 	def assertNotNone(self):
 		"""ViewTest: Test instance not null"""
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 		self.assertNotEqual(None, view) 
 
 	def assertIView(self):
 		"""ViewTest: Test instance implements IView"""
-		view = org.puremvc.python.core.View.getInstance()
-		self.assertEqual(True, isinstance(view, org.puremvc.python.interfaces.IView))
+		view = puremvc.core.View.getInstance()
+		self.assertEqual(True, isinstance(view, puremvc.interfaces.IView))
 
 	def testRegisterAndNotifyObserver(self):
 		"""ViewTest: Test registerObserver() and notifyObservers()"""
@@ -41,8 +41,8 @@ class ViewTest(unittest.TestCase):
 		def viewTestMethod(note):
 			self.viewTestVar = note.getBody()
 		
-		view = org.puremvc.python.core.View.getInstance()
-		obsvr = org.puremvc.python.patterns.observer.Observer(viewTestMethod, self)
+		view = puremvc.core.View.getInstance()
+		obsvr = puremvc.patterns.observer.Observer(viewTestMethod, self)
 		view.registerObserver(utils.view.ViewTestNote.NAME, obsvr)
 		
 		note = utils.view.ViewTestNote.create(10)
@@ -52,7 +52,7 @@ class ViewTest(unittest.TestCase):
 
 	def testRegisterAndRetrieveMediator(self):
 		"""ViewTest: Test registerMediator() and retrieveMediator()"""
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 
 		viewTestMediator = utils.view.ViewTestMediator(self)
 		view.registerMediator(viewTestMediator)
@@ -64,8 +64,8 @@ class ViewTest(unittest.TestCase):
 			
 	def testHasMediator(self):
 		"""ViewTest: Test hasMediator()"""
-		view = org.puremvc.python.core.View.getInstance()
-		meditr = org.puremvc.python.patterns.mediator.Mediator('hasMediatorTest', self)
+		view = puremvc.core.View.getInstance()
+		meditr = puremvc.patterns.mediator.Mediator('hasMediatorTest', self)
 		view.registerMediator(meditr)
 
 		self.assertEqual(True, view.hasMediator('hasMediatorTest'))
@@ -77,9 +77,9 @@ class ViewTest(unittest.TestCase):
 
 	def testRegisterAndRemoveMediator(self):
 		"""ViewTest: Test registerMediator() and removeMediator()"""
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 
-		meditr = org.puremvc.python.patterns.mediator.Mediator('testing', self)
+		meditr = puremvc.patterns.mediator.Mediator('testing', self)
 		view.registerMediator(meditr)
 
 		removedMediator = view.removeMediator('testing')
@@ -91,7 +91,7 @@ class ViewTest(unittest.TestCase):
 
 	def testOnRegisterAndOnRemove(self):
 		"""ViewTest: Test onRegsiter() and onRemove()"""
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 
 		mediator = utils.view.ViewTestMediator4(self)
 		view.registerMediator(mediator)
@@ -106,7 +106,7 @@ class ViewTest(unittest.TestCase):
 
 	def testSuccessiveRegisterAndRemoveMediator(self):
 		"""ViewTest: Test Successive registerMediator() and removeMediator()"""
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 
 		view.registerMediator(utils.view.ViewTestMediator(self))
 	
@@ -131,14 +131,14 @@ class ViewTest(unittest.TestCase):
 	def testRemoveMediatorAndSubsequentNotify(self): 
 		"""ViewTest: Test removeMediator() and subsequent nofity()"""
 
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 	
 		view.registerMediator(utils.view.ViewTestMediator2(self))
 	
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE1))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
 		self.assertEqual(True, self.lastNotification == self.NOTE1)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE2))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE2))
 		self.assertEqual(True, self.lastNotification == self.NOTE2)
 
 		view.removeMediator(utils.view.ViewTestMediator2.NAME)
@@ -147,10 +147,10 @@ class ViewTest(unittest.TestCase):
 
 		self.lastNotification = None
 	
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE1))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
 		self.assertEqual(True, self.lastNotification != self.NOTE1)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE2))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE2))
 		self.assertEqual(True, self.lastNotification != self.NOTE2)
 
 		self.__cleanup()									
@@ -158,19 +158,19 @@ class ViewTest(unittest.TestCase):
 	def testRemoveOneOfTwoMediatorsAndSubsequentNotify(self): 
 		"""ViewTest: Test removing one of two Mediators and subsequent notify()"""
 		
-		view = org.puremvc.python.core.View.getInstance()
+		view = puremvc.core.View.getInstance()
 		
 		view.registerMediator(utils.view.ViewTestMediator2(self))
 	
 		view.registerMediator(utils.view.ViewTestMediator3(self))
 	
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE1))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
 		self.assertEqual(True, self.lastNotification == self.NOTE1)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE2))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE2))
 		self.assertEqual(True, self.lastNotification == self.NOTE2)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE3))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE3))
 		self.assertEqual(True, self.lastNotification == self.NOTE3)
 			
 		view.removeMediator(utils.view.ViewTestMediator2.NAME)
@@ -179,13 +179,13 @@ class ViewTest(unittest.TestCase):
 
 		self.lastNotification = None
 	
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE1))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
 		self.assertEqual(True, self.lastNotification != self.NOTE1)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE2))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE2))
 		self.assertEqual(True, self.lastNotification != self.NOTE2)
 
-		view.notifyObservers(org.puremvc.python.patterns.observer.Notification(self.NOTE3))
+		view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE3))
 		self.assertEqual(True, self.lastNotification == self.NOTE3)
 		
 		self.__cleanup()									

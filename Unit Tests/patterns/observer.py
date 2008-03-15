@@ -1,6 +1,6 @@
 import unittest
 
-import org.puremvc.python.patterns.observer
+import puremvc.patterns.observer
 
 class ObserverTest(unittest.TestCase):
 	"""ObserverTest: Test Observer Pattern"""
@@ -12,12 +12,12 @@ class ObserverTest(unittest.TestCase):
   	def testObserverAccessors(self):
   		"""ObserverTest: Test Observer Accessors"""
 
-		obsrvr = org.puremvc.python.patterns.observer.Observer(None,None)
+		obsrvr = puremvc.patterns.observer.Observer(None,None)
 		obsrvr.setNotifyContext(self)
 		
 		obsrvr.setNotifyMethod(self.__observerTestMethod)
 
-		note = org.puremvc.python.patterns.observer.Notification('ObserverTestNote',10)
+		note = puremvc.patterns.observer.Notification('ObserverTestNote',10)
 		obsrvr.notifyObserver(note)
 			
 		self.assertEqual(True, self.__observerTestVar == 10)
@@ -25,9 +25,9 @@ class ObserverTest(unittest.TestCase):
   	def testObserverConstructor(self): 
   		"""ObserverTest: Test Observer Constructor"""	
 
-   		obsrvr = org.puremvc.python.patterns.observer.Observer(self.__observerTestMethod,self)
+   		obsrvr = puremvc.patterns.observer.Observer(self.__observerTestMethod,self)
 
-		note = org.puremvc.python.patterns.observer.Notification('ObserverTestNote',5)
+		note = puremvc.patterns.observer.Notification('ObserverTestNote',5)
 		obsrvr.notifyObserver(note)
  			
 		self.assertEqual(True, self.__observerTestVar == 5)
@@ -35,7 +35,7 @@ class ObserverTest(unittest.TestCase):
   	def testCompareNotifyContext(self): 
   		"""ObserverTest: Test compareNotifyContext()"""	
 
-		obsrvr = org.puremvc.python.patterns.observer.Observer(self.__observerTestMethod, self)
+		obsrvr = puremvc.patterns.observer.Observer(self.__observerTestMethod, self)
 
 		negTestObj = object()
 		
@@ -46,7 +46,7 @@ class ObserverTest(unittest.TestCase):
 	def testNameAccessors(self): 
 		"""NotificationTest: Test Name Accessors"""
 	
-		note = org.puremvc.python.patterns.observer.Notification('TestNote')
+		note = puremvc.patterns.observer.Notification('TestNote')
 
 		self.assertEqual(True, note.getName() == 'TestNote')
    		
@@ -54,7 +54,7 @@ class ObserverTest(unittest.TestCase):
   	def testBodyAccessors(self): 
 		"""NotificationTest: Test Body Accessors"""
 
-		note = org.puremvc.python.patterns.observer.Notification(None)
+		note = puremvc.patterns.observer.Notification(None)
 		note.setBody(5)
 
 		self.assertEqual(True, note.getBody() == 5)
@@ -62,7 +62,7 @@ class ObserverTest(unittest.TestCase):
   	def testConstructor(self): 
 		"""NotificationTest: Test Constructor"""
 
-		note = org.puremvc.python.patterns.observer.Notification('TestNote',5,'TestNoteType')
+		note = puremvc.patterns.observer.Notification('TestNote',5,'TestNoteType')
 
 		self.assertEqual(True, note.getName() == 'TestNote')
 		self.assertEqual(True, note.getBody() == 5)

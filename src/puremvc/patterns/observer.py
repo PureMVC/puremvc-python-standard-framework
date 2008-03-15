@@ -4,10 +4,10 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.facade
+import puremvc.interfaces
+import puremvc.patterns.facade
 
-class Observer(object, org.puremvc.python.interfaces.IObserver):
+class Observer(object, puremvc.interfaces.IObserver):
 	"""
 	A base C{IObserver} implementation.
 	
@@ -96,7 +96,7 @@ class Observer(object, org.puremvc.python.interfaces.IObserver):
 		return (obj is self.context)
 
 
-class Notifier(object, org.puremvc.python.interfaces.INotifier):
+class Notifier(object, puremvc.interfaces.INotifier):
 	"""
 	A Base C{INotifier} implementation.
 	
@@ -127,7 +127,7 @@ class Notifier(object, org.puremvc.python.interfaces.INotifier):
 		"""
 		Notifier Constructor
 		"""
-		self.facade = org.puremvc.python.patterns.facade.Facade.getInstance()
+		self.facade = puremvc.patterns.facade.Facade.getInstance()
 	
 	def sendNotification(self, notificationName, body=None, type=None):
 		"""
@@ -143,7 +143,7 @@ class Notifier(object, org.puremvc.python.interfaces.INotifier):
 		self.facade.sendNotification(notificationName, body, type)
 
 
-class Notification(object, org.puremvc.python.interfaces.INotification):
+class Notification(object, puremvc.interfaces.INotification):
 	"""
 	A base C{INotification} implementation.
 	

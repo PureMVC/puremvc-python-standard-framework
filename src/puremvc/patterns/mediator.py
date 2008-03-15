@@ -4,11 +4,11 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
-import org.puremvc.python.patterns.facade
+import puremvc.interfaces
+import puremvc.patterns.observer
+import puremvc.patterns.facade
 
-class Mediator(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python.interfaces.IMediator, org.puremvc.python.interfaces.INotifier):
+class Mediator(puremvc.patterns.observer.Notifier, puremvc.interfaces.IMediator, puremvc.interfaces.INotifier):
 	"""
 	A base C{IMediator} implementation. 
 	 
@@ -28,7 +28,7 @@ class Mediator(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python
 		one specific control or group controls and so,
 		will not have a need to be dynamically named.
 		"""
-		self.facade = org.puremvc.python.patterns.facade.Facade.getInstance()
+		self.facade = puremvc.patterns.facade.Facade.getInstance()
 		if mediatorName:
 			self.mediatorName = mediatorName
 		else:

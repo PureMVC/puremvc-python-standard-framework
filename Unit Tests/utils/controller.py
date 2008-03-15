@@ -1,6 +1,6 @@
-import org.puremvc.python.patterns.command
+import puremvc.patterns.command
 
-class ControllerTestCommand(org.puremvc.python.patterns.command.SimpleCommand):
+class ControllerTestCommand(puremvc.patterns.command.SimpleCommand):
 	
 	def execute(self, note):
 		vo = note.getBody()

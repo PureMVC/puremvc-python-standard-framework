@@ -1,6 +1,6 @@
-import org.puremvc.python.patterns.command
+import puremvc.patterns.command
 
-class FacadeTestCommand(org.puremvc.python.patterns.command.SimpleCommand):
+class FacadeTestCommand(puremvc.patterns.command.SimpleCommand):
 	def execute(self,note):
 		vo = note.getBody()
 		vo.result = 2 * vo.input;

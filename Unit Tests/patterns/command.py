@@ -1,6 +1,6 @@
 import unittest
 
-import org.puremvc.python.patterns.observer
+import puremvc.patterns.observer
 import utils.command
 
 class CommandTest(unittest.TestCase):
@@ -10,7 +10,7 @@ class CommandTest(unittest.TestCase):
 		"""CommandTest: Test MacroCommand execute()"""
 		
 		vo = utils.command.MacroCommandTestVO(5)
-		note = org.puremvc.python.patterns.observer.Notification('MacroCommandTest', vo)	
+		note = puremvc.patterns.observer.Notification('MacroCommandTest', vo)	
 		command = utils.command.MacroCommandTestCommand()
 		command.execute(note);
 		
@@ -21,7 +21,7 @@ class CommandTest(unittest.TestCase):
 		"""CommandTest: Test SimpleCommand execute()"""
 
 		vo = utils.command.SimpleCommandTestVO(5)
-		note = org.puremvc.python.patterns.observer.Notification('SimpleCommandTestNote', vo)
+		note = puremvc.patterns.observer.Notification('SimpleCommandTestNote', vo)
 		command = utils.command.SimpleCommandTestCommand()
 		command.execute(note);
 

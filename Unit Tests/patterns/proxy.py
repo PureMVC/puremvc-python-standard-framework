@@ -1,6 +1,6 @@
 import unittest
 
-import org.puremvc.python.patterns.proxy
+import puremvc.patterns.proxy
 
 class ProxyTest(unittest.TestCase):
 	"""ProxyTest: Test Proxy Pattern"""
@@ -8,13 +8,13 @@ class ProxyTest(unittest.TestCase):
 	def testNameAccessor(self):
 		"""ProxyTest: Test Name Accessor"""
 
-   		prxy = org.puremvc.python.patterns.proxy.Proxy('TestProxy')
+   		prxy = puremvc.patterns.proxy.Proxy('TestProxy')
    		self.assertEqual(True, prxy.getProxyName() == 'TestProxy')
 
   	def testDataAccessors(self): 
 		"""ProxyTest: Test Data Accessors"""
 		
-		prxy = org.puremvc.python.patterns.proxy.Proxy('colors')
+		prxy = puremvc.patterns.proxy.Proxy('colors')
 		prxy.setData(['red', 'green', 'blue'])
 		data = prxy.getData()
 
@@ -26,7 +26,7 @@ class ProxyTest(unittest.TestCase):
   	def testConstructor(self): 
 		"""ProxyTest: Test Constructor"""
 
-		prxy = org.puremvc.python.patterns.proxy.Proxy('colors',['red', 'green', 'blue'])
+		prxy = puremvc.patterns.proxy.Proxy('colors',['red', 'green', 'blue'])
 		data = prxy.getData()
 
 		self.assertEqual(True, prxy is not None)

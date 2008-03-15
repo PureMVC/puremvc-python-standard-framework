@@ -4,10 +4,10 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
+import puremvc.interfaces
+import puremvc.patterns.observer
 
-class MacroCommand(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python.interfaces.ICommand, org.puremvc.python.interfaces.INotifier):
+class MacroCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.ICommand, puremvc.interfaces.INotifier):
 	"""
 	A base C{ICommand} implementation that executes other C{ICommand}s.
 
@@ -25,9 +25,9 @@ class MacroCommand(org.puremvc.python.patterns.observer.Notifier, org.puremvc.py
 	calling C{addSubCommand} once for each I{SubCommand}
 	to be executed.
 	
-	@see: L{Controller<org.puremvc.python.core.controller.Controller>}
-	@see: L{Notification<org.puremvc.python.patterns.observer.Notification>}
-	@see: L{SimpleCommand<org.puremvc.python.patterns.command.SimpleCommand>}
+	@see: L{Controller<puremvc.core.controller.Controller>}
+	@see: L{Notification<puremvc.patterns.observer.Notification>}
+	@see: L{SimpleCommand<puremvc.patterns.command.SimpleCommand>}
 	"""
 
 	subCommands = None
@@ -84,16 +84,16 @@ class MacroCommand(org.puremvc.python.patterns.observer.Notifier, org.puremvc.py
 			commandInstance.execute(notification)
 		
 	
-class SimpleCommand(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python.interfaces.ICommand, org.puremvc.python.interfaces.INotifier):
+class SimpleCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.ICommand, puremvc.interfaces.INotifier):
 	"""
 	A base C{ICommand} implementation.
 	
 	Your subclass should override the C{execute} 
 	method where your business logic will handle the C{INotification}.
 	
-	@see: L{Controller<org.puremvc.python.core.controller.Controller>}
-	@see: L{Notification<org.puremvc.python.patterns.observer.Notification>}
-	@see: L{MacroCommand<org.puremvc.python.patterns.command.MacroCommand>}
+	@see: L{Controller<puremvc.core.controller.Controller>}
+	@see: L{Notification<puremvc.patterns.observer.Notification>}
+	@see: L{MacroCommand<puremvc.patterns.command.MacroCommand>}
 	"""
 
 	def execute(self, notification):

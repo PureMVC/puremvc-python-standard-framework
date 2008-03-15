@@ -4,10 +4,10 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
+import puremvc.interfaces
+import puremvc.patterns.observer
 
-class Controller(object,org.puremvc.python.interfaces.IController):
+class Controller(object,puremvc.interfaces.IController):
 	"""
 	A Singleton C{IController} implementation.
 	
@@ -35,11 +35,11 @@ class Controller(object,org.puremvc.python.interfaces.IController):
 	and use its C{initializeController} method to add your 
 	registrations. 
 	
-	@see: L{View<org.puremvc.python.core.view.View>}
-	@see: L{Observer<org.puremvc.python.patterns.observer.Observer>}
-	@see: L{Notification<org.puremvc.python.patterns.observer.Notification>}
-	@see: L{SimpleCommand<org.puremvc.python.patterns.command.SimpleCommand>}
-	@see: L{MacroCommand<org.puremvc.python.patterns.command.MacroCommand>}
+	@see: L{View<puremvc.core.view.View>}
+	@see: L{Observer<puremvc.patterns.observer.Observer>}
+	@see: L{Notification<puremvc.patterns.observer.Notification>}
+	@see: L{SimpleCommand<puremvc.patterns.command.SimpleCommand>}
+	@see: L{MacroCommand<puremvc.patterns.command.MacroCommand>}
 	"""
 	instance = None
 	view = None
@@ -109,7 +109,7 @@ class Controller(object,org.puremvc.python.interfaces.IController):
 		@param commandClassRef: the C{Class} of the C{ICommand}
 		"""
 		if (self.commandMap.get(notificationName,None) == None):
-			self.view.registerObserver(notificationName, org.puremvc.python.patterns.observer.Observer(self.executeCommand, self))
+			self.view.registerObserver(notificationName, puremvc.patterns.observer.Observer(self.executeCommand, self))
 	
 		self.commandMap[notificationName] = commandClassRef
 	
@@ -131,7 +131,7 @@ class Controller(object,org.puremvc.python.interfaces.IController):
 		del self.commandMap[notificationName]
 
 
-class Model(object,org.puremvc.python.interfaces.IModel):
+class Model(object,puremvc.interfaces.IModel):
 	"""
 	A Singleton C{IModel} implementation.
 	
@@ -150,8 +150,8 @@ class Model(object,org.puremvc.python.interfaces.IModel):
 	instances once the C{Facade} has initialized the Core 
 	actors.
 
-	@see: L{Proxy<org.puremvc.python.patterns.proxy.Proxy>}
-	@see: L{IProxy<org.puremvc.python.interfaces.IProxy>}
+	@see: L{Proxy<puremvc.patterns.proxy.Proxy>}
+	@see: L{IProxy<puremvc.interfaces.IProxy>}
 	"""
 	instance = None
 	proxyMap = None
@@ -222,7 +222,7 @@ class Model(object,org.puremvc.python.interfaces.IModel):
 		proxy.onRemove()
 		return proxy
 
-class View(object,org.puremvc.python.interfaces.IView):
+class View(object,puremvc.interfaces.IView):
 	"""
 	A Singleton C{IView} implementation.
 	
@@ -243,9 +243,9 @@ class View(object,org.puremvc.python.interfaces.IView):
 	Notifying the C{IObservers} of a given C{INotification} when it broadcast.
 
 	
-	@see: L{Mediator<org.puremvc.python.patterns.mediator.Mediator>}
-	@see: L{Observer<org.puremvc.python.patterns.observer.Observer>}
-	@see: L{Notification<org.puremvc.python.patterns.observer.Notification>}
+	@see: L{Mediator<puremvc.patterns.mediator.Mediator>}
+	@see: L{Observer<puremvc.patterns.observer.Observer>}
+	@see: L{Notification<puremvc.patterns.observer.Notification>}
 	"""
 	instance = None
 	observerMap = None
@@ -326,7 +326,7 @@ class View(object,org.puremvc.python.interfaces.IView):
 		self.mediatorMap[mediator.getMediatorName()] = mediator
 		interests = mediator.listNotificationInterests()
 		if len(interests) > 0:
-			obsvr = org.puremvc.python.patterns.observer.Observer(mediator.handleNotification, mediator)
+			obsvr = puremvc.patterns.observer.Observer(mediator.handleNotification, mediator)
 
 			for i in range(0,len(interests)):
 				self.registerObserver(interests[i],	obsvr)

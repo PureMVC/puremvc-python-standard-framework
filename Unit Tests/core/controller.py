@@ -1,29 +1,29 @@
 import unittest
  	
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
-import org.puremvc.python.core 
+import puremvc.interfaces
+import puremvc.patterns.observer
+import puremvc.core 
 import utils.controller
 
 class ControllerTest(unittest.TestCase):
 	"""ControllerTest: Test Controller Singleton"""
 	def assertNotNone(self):
 		"""ControllerTest: Test instance not null"""
-		controller = org.puremvc.python.core.Controller.getInstance()
+		controller = puremvc.core.Controller.getInstance()
    		self.assertNotEqual(None, controller) 
 
 	def assertIController(self):
 		"""ControllerTest: Test instance implements IController"""
-		controller = org.puremvc.python.core.Controller.getInstance()
-   		self.assertEqual(True, isinstance(controller, org.puremvc.python.interfaces.IController))
+		controller = puremvc.core.Controller.getInstance()
+   		self.assertEqual(True, isinstance(controller, puremvc.interfaces.IController))
 
 	def testRegisterAndExecuteCommand(self):
  		"""ControllerTest: Test registerCommand() and executeCommand(0)"""
-		controller = org.puremvc.python.core.Controller.getInstance()
+		controller = puremvc.core.Controller.getInstance()
 		controller.registerCommand('ControllerTest', utils.controller.ControllerTestCommand)
 		
 		vo = utils.controller.ControllerTestVO(12)
-		note = org.puremvc.python.patterns.observer.Notification('ControllerTest', vo)
+		note = puremvc.patterns.observer.Notification('ControllerTest', vo)
 
 		controller.executeCommand(note)
 		
@@ -31,11 +31,11 @@ class ControllerTest(unittest.TestCase):
   		
 	def testRegisterAndRemoveCommand(self): 
 		"""ControllerTest: Test registerCommand() and removeCommand()"""
-		controller = org.puremvc.python.core.Controller.getInstance()
+		controller = puremvc.core.Controller.getInstance()
 		controller.registerCommand('ControllerRemoveTest', utils.controller.ControllerTestCommand)
 
 		vo = utils.controller.ControllerTestVO(12)
-		note = org.puremvc.python.patterns.observer.Notification('ControllerRemoveTest', vo)
+		note = puremvc.patterns.observer.Notification('ControllerRemoveTest', vo)
 
 		controller.executeCommand(note)
 
@@ -51,7 +51,7 @@ class ControllerTest(unittest.TestCase):
 	def testHasCommand(self): 
 		"""ControllerTest: Test hasCommand()"""
 		
-		controller = org.puremvc.python.core.Controller.getInstance()
+		controller = puremvc.core.Controller.getInstance()
 		controller.registerCommand('hasCommandTest', utils.controller.ControllerTestCommand)
 
 		self.assertEqual(True, controller.hasCommand('hasCommandTest'))

@@ -8,7 +8,7 @@ class ICommand:
 	"""
 	The interface definition for a PureMVC Command.
 
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def execute(self, notification):
 		"""
@@ -42,8 +42,8 @@ class IController:
 	method, passing in the C{INotification}.
 	
 
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
-	@see: L{ICommand<org.puremvc.python.interfaces.ICommand>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
+	@see: L{ICommand<puremvc.interfaces.ICommand>}
 	"""
 	def registerCommand(self, notificationName, commandClassRef):
 		"""
@@ -91,11 +91,11 @@ class IFacade:
 	the core MVC actors (Model, View, Controller) and
 	the rest of your application.
 	
-	@see: L{IModel<org.puremvc.python.interfaces.IModel>}
-	@see: L{IView<org.puremvc.python.interfaces.IView>}
-	@see: L{IController<org.puremvc.python.interfaces.IController>}
-	@see: L{ICommand<org.puremvc.python.interfaces.ICommand>}
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{IModel<puremvc.interfaces.IModel>}
+	@see: L{IView<puremvc.interfaces.IView>}
+	@see: L{IController<puremvc.interfaces.IController>}
+	@see: L{ICommand<puremvc.interfaces.ICommand>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def registerProxy(self, proxy):
 		"""
@@ -216,7 +216,7 @@ class IMediator:
 	and register it as an Observer for each C{INotification} name returned by 
 	C{listNotificationInterests}.
 	
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def getMediatorName(self):
 		"""
@@ -344,8 +344,8 @@ class INotification:
 	parent/child relationship in order to communicate with one another
 	using C{Notification}s.
 	
-	@see: L{IView<org.puremvc.python.interfaces.IView>}
-	@see: L{IObserver<org.puremvc.python.interfaces.IObserver>}
+	@see: L{IView<puremvc.interfaces.IView>}
+	@see: L{IObserver<puremvc.interfaces.IObserver>}
 	"""
 	def getName(self):
 		"""
@@ -401,8 +401,8 @@ class INotifier:
 	classes have frequent C{Facade} interactions and usually require
 	access to the facade anyway.
 	
-	@see: L{IFacade<org.puremvc.python.interfaces.IFacade>}
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{IFacade<puremvc.interfaces.IFacade>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def sendNotification(self, notificationName, body = None, type = None):
 		"""
@@ -455,8 +455,8 @@ class IObserver:
 	in an object implementing the C{INotification} interface, such
 	as a subclass of C{Notification}.
 	
-	@see: L{IView<org.puremvc.python.interfaces.IView>}
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{IView<puremvc.interfaces.IView>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def setNotifyMethod(self, notifyMethod):
 		"""
@@ -567,9 +567,9 @@ class IView:
 	
 	Notifying the C{IObservers} of a given C{INotification} when it broadcast.
 	
-	@see: L{IMediator<org.puremvc.python.interfaces.IMediator>}
-	@see: L{IObserver<org.puremvc.python.interfaces.IObserver>}
-	@see: L{INotification<org.puremvc.python.interfaces.INotification>}
+	@see: L{IMediator<puremvc.interfaces.IMediator>}
+	@see: L{IObserver<puremvc.interfaces.IObserver>}
+	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
 	def registerObserver(self, notificationName, observer):
 		"""

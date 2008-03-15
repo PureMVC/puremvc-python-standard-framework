@@ -4,11 +4,11 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
-import org.puremvc.python.patterns.facade
+import puremvc.interfaces
+import puremvc.patterns.observer
+import puremvc.patterns.facade
 
-class Proxy(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python.interfaces.IProxy, org.puremvc.python.interfaces.INotifier):
+class Proxy(puremvc.patterns.observer.Notifier, puremvc.interfaces.IProxy, puremvc.interfaces.INotifier):
 	"""
 	A base C{IProxy} implementation. 
 	
@@ -40,7 +40,7 @@ class Proxy(org.puremvc.python.patterns.observer.Notifier, org.puremvc.python.in
 		@param proxyName: the name of the proxy instance (optional)
 		@param data: the proxy data (optional)
 		"""
-		self.facade = org.puremvc.python.patterns.facade.Facade.getInstance()
+		self.facade = puremvc.patterns.facade.Facade.getInstance()
 		if proxyName:
 			self.proxyName = proxyName
 		else:

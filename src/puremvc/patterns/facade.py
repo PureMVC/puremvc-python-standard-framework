@@ -4,11 +4,11 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-import org.puremvc.python.core
-import org.puremvc.python.interfaces
-import org.puremvc.python.patterns.observer
+import puremvc.core
+import puremvc.interfaces
+import puremvc.patterns.observer
 
-class Facade(object,org.puremvc.python.interfaces.IFacade):
+class Facade(object,puremvc.interfaces.IFacade):
 	"""
 	A base Singleton C{IFacade} implementation.
 	
@@ -92,7 +92,7 @@ class Facade(object,org.puremvc.python.interfaces.IFacade):
 		"""
 		if (self.controller is not None):
 			return
-		self.controller = org.puremvc.python.core.Controller.getInstance()
+		self.controller = puremvc.core.Controller.getInstance()
 		
 	def initializeModel(self):
 		"""
@@ -119,7 +119,7 @@ class Facade(object,org.puremvc.python.interfaces.IFacade):
 		"""
 		if (self.model is not None):
 			return
-		self.model = org.puremvc.python.core.Model.getInstance()
+		self.model = puremvc.core.Model.getInstance()
 	
 	def initializeView(self):
 		"""
@@ -146,7 +146,7 @@ class Facade(object,org.puremvc.python.interfaces.IFacade):
 		"""
 		if (self.view is not None):
 			return
-		self.view = org.puremvc.python.core.View.getInstance()
+		self.view = puremvc.core.View.getInstance()
 	
 	def registerCommand(self, notificationName, commandClassRef):
 		"""
@@ -262,7 +262,7 @@ class Facade(object,org.puremvc.python.interfaces.IFacade):
 		@param body: the body of the notification (optional)
 		@param type: the type of the notification (optional)
 		"""
-		self.notifyObservers(org.puremvc.python.patterns.observer.Notification(notificationName, body, type))
+		self.notifyObservers(puremvc.patterns.observer.Notification(notificationName, body, type))
 	
 	def notifyObservers(self, notification):
 		"""

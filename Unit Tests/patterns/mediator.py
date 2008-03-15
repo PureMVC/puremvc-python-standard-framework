@@ -1,6 +1,6 @@
 import unittest
 
-import org.puremvc.python.patterns.mediator as mediator
+import puremvc.patterns.mediator as mediator
 
 class MediatorTest(unittest.TestCase):
 	"""MediatorTest: Test Mediator Pattern"""
