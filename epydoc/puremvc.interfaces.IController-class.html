@@ -111,43 +111,6 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IController-class.html#executeCommand" class="summary-sig-name">executeCommand</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notification</span>)</span><br />
-      Execute the <code>ICommand</code> previously registered as thehandler
-      for <code>INotification</code>s with the given notification name.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.executeCommand">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IController-class.html#hasCommand" class="summary-sig-name">hasCommand</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notificationName</span>)</span><br />
-      Check if a Command is registered for a given Notification</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.hasCommand">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
           <td><span class="summary-sig"><a href="puremvc.interfaces.IController-class.html#registerCommand" class="summary-sig-name">registerCommand</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">notificationName</span>,
         <span class="summary-sig-arg">commandClassRef</span>)</span><br />
@@ -155,6 +118,25 @@
       a particular <code>INotification</code>.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.registerCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IController-class.html#executeCommand" class="summary-sig-name">executeCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notification</span>)</span><br />
+      Execute the <code>ICommand</code> previously registered as thehandler
+      for <code>INotification</code>s with the given notification name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.executeCommand">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -181,6 +163,24 @@
       
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IController-class.html#hasCommand" class="summary-sig-name">hasCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>)</span><br />
+      Check if a Command is registered for a given Notification</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.hasCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
 </table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
@@ -200,6 +200,33 @@
   </td>
 </tr>
 </table>
+<a name="registerCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">commandClassRef</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.registerCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register a particular <code>ICommand</code> class as the handler for a
+  particular <code>INotification</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code></li>
+        <li><strong class="pname"><code>commandClassRef</code></strong> - the Class of the <code>ICommand</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="executeCommand"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -222,6 +249,32 @@
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to execute the associated 
           <code>ICommand</code> for</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.removeCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a previously registered <code>ICommand</code> to 
+  <code>INotification</code> mapping.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to remove the 
+          <code>ICommand</code> mapping fo</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -253,59 +306,6 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="registerCommand"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerCommand</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notificationName</span>,
-        <span class="sig-arg">commandClassRef</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.registerCommand">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Register a particular <code>ICommand</code> class as the handler for a
-  particular <code>INotification</code>.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code></li>
-        <li><strong class="pname"><code>commandClassRef</code></strong> - the Class of the <code>ICommand</code></li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="removeCommand"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCommand</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notificationName</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IController.removeCommand">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Remove a previously registered <code>ICommand</code> to 
-  <code>INotification</code> mapping.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to remove the 
-          <code>ICommand</code> mapping fo</li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
 <br />
 <!-- ==================== NAVIGATION BAR ==================== -->
 <table class="navbar" border="0" width="100%" cellpadding="0"
@@ -333,7 +333,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Mar 15 14:17:45 2008
+    Generated by Epydoc 3.0.1 on Sat Mar 15 18:35:00 2008
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

@@ -120,29 +120,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#compareNotifyContext" class="summary-sig-name">compareNotifyContext</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">object</span>)</span><br />
-      Compare the given object to the notificaiton context object.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#setNotifyMethod" class="summary-sig-name">setNotifyMethod</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notifyMethod</span>)</span><br />
+      Set the notification method.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.compareNotifyContext">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#notifyObserver" class="summary-sig-name">notifyObserver</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notification</span>)</span><br />
-      Notify the interested object.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.notifyObserver">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.setNotifyMethod">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -174,11 +156,29 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#setNotifyMethod" class="summary-sig-name">setNotifyMethod</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notifyMethod</span>)</span><br />
-      Set the notification method.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#notifyObserver" class="summary-sig-name">notifyObserver</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notification</span>)</span><br />
+      Notify the interested object.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.setNotifyMethod">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.notifyObserver">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IObserver-class.html#compareNotifyContext" class="summary-sig-name">compareNotifyContext</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">object</span>)</span><br />
+      Compare the given object to the notificaiton context object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.compareNotifyContext">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -205,54 +205,28 @@
   </td>
 </tr>
 </table>
-<a name="compareNotifyContext"></a>
+<a name="setNotifyMethod"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">compareNotifyContext</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">object</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setNotifyMethod</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notifyMethod</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.compareNotifyContext">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.setNotifyMethod">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Compare the given object to the notificaiton context object.</p>
+  <p>Set the notification method.</p>
+  <p>The notification method should take one parameter of type 
+  <code>INotification</code></p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>object</code></strong> - the object to compare.</li>
-    </ul></dd>
-    <dt>Returns:</dt>
-        <dd>boolean indicating if the notification context and the object are
-          the same.</dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="notifyObserver"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">notifyObserver</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notification</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.notifyObserver">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Notify the interested object.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to pass to the interested object's
-          notification method</li>
+        <li><strong class="pname"><code>notifyMethod</code></strong> - the notification (callback) method of the interested object</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -281,29 +255,55 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="setNotifyMethod"></a>
+<a name="notifyObserver"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">setNotifyMethod</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notifyMethod</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">notifyObserver</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notification</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.setNotifyMethod">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.notifyObserver">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Set the notification method.</p>
-  <p>The notification method should take one parameter of type 
-  <code>INotification</code></p>
+  <p>Notify the interested object.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notifyMethod</code></strong> - the notification (callback) method of the interested object</li>
+        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to pass to the interested object's
+          notification method</li>
     </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="compareNotifyContext"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">compareNotifyContext</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">object</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IObserver.compareNotifyContext">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Compare the given object to the notificaiton context object.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>object</code></strong> - the object to compare.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>boolean indicating if the notification context and the object are
+          the same.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -334,7 +334,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Mar 15 14:17:45 2008
+    Generated by Epydoc 3.0.1 on Sat Mar 15 18:35:00 2008
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

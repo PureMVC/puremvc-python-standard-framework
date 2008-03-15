@@ -155,11 +155,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IMediator-class.html#handleNotification" class="summary-sig-name">handleNotification</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notification</span>)</span><br />
-      Handle an <code>INotification</code>.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IMediator-class.html#setViewComponent" class="summary-sig-name">setViewComponent</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">viewComponent</span>)</span><br />
+      Set the <code>IMediator</code>'s view component.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.handleNotification">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.setViewComponent">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -177,6 +177,24 @@
       List <code>INotification</code> interests.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.listNotificationInterests">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IMediator-class.html#handleNotification" class="summary-sig-name">handleNotification</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notification</span>)</span><br />
+      Handle an <code>INotification</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.handleNotification">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -211,24 +229,6 @@
       Called by the View when the Mediator is removed</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.onRemove">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IMediator-class.html#setViewComponent" class="summary-sig-name">setViewComponent</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">viewComponent</span>)</span><br />
-      Set the <code>IMediator</code>'s view component.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.setViewComponent">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -297,26 +297,26 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="handleNotification"></a>
+<a name="setViewComponent"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">handleNotification</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notification</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setViewComponent</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">viewComponent</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.handleNotification">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.setViewComponent">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Handle an <code>INotification</code>.</p>
+  <p>Set the <code>IMediator</code>'s view component.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to be handled</li>
+        <li><strong class="pname"><code>viewComponent</code></strong> - the view component</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -343,26 +343,26 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="setViewComponent"></a>
+<a name="handleNotification"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">setViewComponent</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">viewComponent</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handleNotification</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notification</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.setViewComponent">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IMediator.handleNotification">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Set the <code>IMediator</code>'s view component.</p>
+  <p>Handle an <code>INotification</code>.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>viewComponent</code></strong> - the view component</li>
+        <li><strong class="pname"><code>notification</code></strong> - the <code>INotification</code> to be handled</li>
     </ul></dd>
   </dl>
 </td></tr></table>
@@ -394,7 +394,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Mar 15 14:17:45 2008
+    Generated by Epydoc 3.0.1 on Sat Mar 15 18:35:00 2008
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

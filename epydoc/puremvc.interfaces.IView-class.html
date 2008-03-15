@@ -114,11 +114,13 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#hasMediator" class="summary-sig-name">hasMediator</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">mediatorName</span>)</span><br />
-      Check if a Mediator is registered or not</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#registerObserver" class="summary-sig-name">registerObserver</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>,
+        <span class="summary-sig-arg">observer</span>)</span><br />
+      Register an <code>IObserver</code> to be notified of 
+      <code>INotifications</code> with a given name.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -170,13 +172,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#registerObserver" class="summary-sig-name">registerObserver</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notificationName</span>,
-        <span class="summary-sig-arg">observer</span>)</span><br />
-      Register an <code>IObserver</code> to be notified of 
-      <code>INotifications</code> with a given name.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#retrieveMediator" class="summary-sig-name">retrieveMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Retrieve an <code>IMediator</code> from the <code>View</code>.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -208,11 +208,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#retrieveMediator" class="summary-sig-name">retrieveMediator</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IView-class.html#hasMediator" class="summary-sig-name">hasMediator</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">mediatorName</span>)</span><br />
-      Retrieve an <code>IMediator</code> from the <code>View</code>.</td>
+      Check if a Mediator is registered or not</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -239,30 +239,31 @@
   </td>
 </tr>
 </table>
-<a name="hasMediator"></a>
+<a name="registerObserver"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasMediator</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">mediatorName</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerObserver</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>,
+        <span class="sig-arg">observer</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Check if a Mediator is registered or not</p>
+  <p>Register an <code>IObserver</code> to be notified of 
+  <code>INotifications</code> with a given name.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code></li>
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotifications</code> to notify this 
+          <code>IObserver</code> of</li>
+        <li><strong class="pname"><code>observer</code></strong> - the <code>IObserver</code> to register</li>
     </ul></dd>
-    <dt>Returns:</dt>
-        <dd>whether a Mediator is registered with the given 
-          <code>mediatorName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -330,31 +331,30 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="registerObserver"></a>
+<a name="retrieveMediator"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerObserver</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notificationName</span>,
-        <span class="sig-arg">observer</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.registerObserver">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Register an <code>IObserver</code> to be notified of 
-  <code>INotifications</code> with a given name.</p>
+  <p>Retrieve an <code>IMediator</code> from the <code>View</code>.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotifications</code> to notify this 
-          <code>IObserver</code> of</li>
-        <li><strong class="pname"><code>observer</code></strong> - the <code>IObserver</code> to register</li>
+        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>IMediator</code> instance to retrieve.</li>
     </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the <code>IMediator</code> instance previously registered with 
+          the given <code>mediatorName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -385,30 +385,30 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="retrieveMediator"></a>
+<a name="hasMediator"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveMediator</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasMediator</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">mediatorName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.retrieveMediator">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IView.hasMediator">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Retrieve an <code>IMediator</code> from the <code>View</code>.</p>
+  <p>Check if a Mediator is registered or not</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>IMediator</code> instance to retrieve.</li>
+        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code></li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>the <code>IMediator</code> instance previously registered with 
-          the given <code>mediatorName</code>.</dd>
+        <dd>whether a Mediator is registered with the given 
+          <code>mediatorName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -439,7 +439,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Sat Mar 15 14:17:45 2008
+    Generated by Epydoc 3.0.1 on Sat Mar 15 18:35:00 2008
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
