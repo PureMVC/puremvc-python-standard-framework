@@ -18,7 +18,7 @@ class ControllerTest(unittest.TestCase):
    		self.assertEqual(True, isinstance(controller, puremvc.interfaces.IController))
 
 	def testRegisterAndExecuteCommand(self):
- 		"""ControllerTest: Test registerCommand() and executeCommand(0)"""
+ 		"""ControllerTest: Test registerCommand() and executeCommand()"""
 		controller = puremvc.core.Controller.getInstance()
 		controller.registerCommand('ControllerTest', utils.controller.ControllerTestCommand)
 		
