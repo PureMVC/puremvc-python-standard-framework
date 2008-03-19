@@ -8,6 +8,9 @@ Release Date: 03/16/08
       Author: Toby de Havilland <toby.de.havilland@puremvc.org>
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
+0.6 - update in sync with releases 2.0.2 and 2.0.3 of the AS3
+      standard package.
+
 0.5 - Removed .pyc files and complete docs.
 
 0.4 - New package structure and installer script.

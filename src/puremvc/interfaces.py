@@ -97,6 +97,20 @@ class IFacade:
 	@see: L{ICommand<puremvc.interfaces.ICommand>}
 	@see: L{INotification<puremvc.interfaces.INotification>}
 	"""
+	def notifyObservers(self,note):
+		"""
+		Notify the C{IObserver}s for a particular C{INotification}.
+
+		All previously attached IObservers for this INotification's list are notified 
+		and are passed a reference to the INotification in the order in which they were registered.
+
+		NOTE: Use this method only if you are sending custom Notifications. Otherwise use the 
+		sendNotification method which does not require you to create the Notification instance.
+		
+		@param note: the C{INotification} to notify C{IObserver}s of.
+		"""
+		raise NotImplemented
+
 	def registerProxy(self, proxy):
 		"""
 		Register an C{IProxy} with the C{Model} by name.

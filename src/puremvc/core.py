@@ -76,9 +76,9 @@ class Controller(object,puremvc.interfaces.IController):
 		self.view = View.getInstance()
 		self.commandMap = {}
 
-	#*  NOTE:
-	#*  Python might be passing the calling object as the first argument NOT self
-	#*  make sure this works.
+	#*	NOTE:
+	#*	Python might be passing the calling object as the first argument NOT self
+	#*	make sure this works.
 	def executeCommand(self, note):
 		"""
 		If an C{ICommand} has previously been registered 
@@ -128,8 +128,10 @@ class Controller(object,puremvc.interfaces.IController):
 		
 		@param notificationName: the name of the C{INotification} to remove the C{ICommand} mapping for
 		"""
-		del self.commandMap[notificationName]
-
+		if self.hasCommand(notificationName):
+			self.view.removeObserver(notificationName, self)
+			del self.commandMap[notificationName]
+		
 
 class Model(object,puremvc.interfaces.IModel):
 	"""
@@ -217,9 +219,10 @@ class Model(object,puremvc.interfaces.IModel):
 		@param proxyName: name of the C{IProxy} instance to be removed.
 		@return: the C{IProxy} that was removed from the C{Model}
 		"""
-		proxy = self.proxyMap[proxyName]
-		del self.proxyMap[proxyName]
-		proxy.onRemove()
+		proxy = self.proxyMap.get(proxyName,None)
+		if proxy:
+			del self.proxyMap[proxyName]
+			proxy.onRemove()
 		return proxy
 
 class View(object,puremvc.interfaces.IView):
@@ -306,6 +309,23 @@ class View(object,puremvc.interfaces.IView):
 			for i in range(0,len(observers)):
 				obsvr = observers[i]
 				obsvr.notifyObserver(notification)
+	
+	def removeObserver(self, notificationName, notifyContext):
+		"""
+		Remove the observer for a given notifyContext from an observer list for a given Notification name.
+		
+		@param notificationName: which observer list to remove from 
+		@param notifyContext: remove the observer with this object as its notifyContext
+		"""
+		observers = self.observerMap[notificationName]
+
+		for i in range(len(observers)):
+			if observers[i].compareNotifyContext(notifyContext):
+				observers.pop(i)
+				break
+
+		if len(observers) == 0:
+			del self.observerMap[notificationName]
 
 	def registerMediator(self, mediator):
 		"""
@@ -329,7 +349,7 @@ class View(object,puremvc.interfaces.IView):
 			obsvr = puremvc.patterns.observer.Observer(mediator.handleNotification, mediator)
 
 			for i in range(0,len(interests)):
-				self.registerObserver(interests[i],	obsvr)
+				self.registerObserver(interests[i], obsvr)
 				
 		mediator.onRegister()
 
@@ -372,6 +392,18 @@ class View(object,puremvc.interfaces.IView):
 		if mediator is not None:
 			del self.mediatorMap[mediatorName]
 			mediator.onRemove()
+		return mediator
+		
+		mediator = self.mediatorMap.get(mediatorName,None)
+
+		if mediator:
+			interests = mediator.listNotificationInterests()
+			for i in range(len(interests)):
+				removeObserver(interests[i], mediator)
+
+			del self.mediatorMap[mediatorName]
+			mediator.onRemove()
+
 		return mediator
 	
 	def hasMediator(self, mediatorName):
