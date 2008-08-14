@@ -16,7 +16,7 @@
  *     either class='epydoc' or class='toc' (CSS styles for both
  *     defined below).
  */
-body                        { background: #ffffff; color: #000000; }
+body                        { font-family: Arial, Verdana, Helvetica, sans-serif; font-size:87%; background: #ffffff; color: #000000; }
 p                           { margin-top: 0.5em; margin-bottom: 0.5em; }
 a:link                      { color: #0000ff; }
 a:visited                   { color: #204080; }
@@ -49,7 +49,7 @@ h3.epydoc                   { font-size: +115%; font-weight: bold;
 td h3.epydoc                { font-size: +115%; font-weight: bold;
                               margin-bottom: 0; }
 table.navbar                { background: #a0c0ff; color: #000000;
-                              border: 2px groove #c0d0d0; }
+                              border: 1px solid #C0C0C0; }
 table.navbar table          { color: #000000; }
 th.navbar-select            { background: #70b0ff;
                               color: #000000; } 
