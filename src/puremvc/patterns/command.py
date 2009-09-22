@@ -79,7 +79,7 @@ class MacroCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.IComma
         @param notification: the C{INotification} object to be passsed to each I{SubCommand}.
         """
         while len(self.subCommands) > 0: 
-            commandClassRef = self.subCommands.pop()
+            commandClassRef = self.subCommands.pop(0)
             commandInstance = commandClassRef()
             commandInstance.execute(notification)
         

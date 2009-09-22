@@ -74,12 +74,12 @@ class Proxy(puremvc.patterns.observer.Notifier, puremvc.interfaces.IProxy, purem
 
     def onRegister(self):
         """
-        Called by the Model when the Proxy is removed
+        Called by the Model when the Proxy is registered
         """
         pass
 
     def onRemove(self):
         """
-        Called by the Model when the Proxy is registered
+        Called by the Model when the Proxy is removed
         """
         pass
