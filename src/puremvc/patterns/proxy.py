@@ -41,10 +41,10 @@ class Proxy(puremvc.patterns.observer.Notifier, puremvc.interfaces.IProxy, purem
         @param data: the proxy data (optional)
         """
         self.facade = puremvc.patterns.facade.Facade.getInstance()
-        if proxyName:
-            self.proxyName = proxyName
-        else:
-            self.proxyName = self.NAME
+        proxyName = proxyName or self.NAME
+        if proxyName is None:
+            raise ValueError("Proxy name cannot be None")
+        self.proxyName = proxyName
         if data:
             self.setData(data)
     

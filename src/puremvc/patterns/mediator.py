@@ -29,10 +29,10 @@ class Mediator(puremvc.patterns.observer.Notifier, puremvc.interfaces.IMediator,
         will not have a need to be dynamically named.
         """
         self.facade = puremvc.patterns.facade.Facade.getInstance()
-        if mediatorName:
-            self.mediatorName = mediatorName
-        else:
-            self.mediatorName = self.NAME
+        mediatorName = mediatorName or self.NAME
+        if mediatorName is None:
+            raise ValueError("Madiator name cannot be None")
+        self.mediatorName = mediatorName
         self.viewComponent = viewComponent    
     
     def getMediatorName(self):

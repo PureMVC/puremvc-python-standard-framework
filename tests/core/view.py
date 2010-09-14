@@ -223,3 +223,12 @@ class ViewTest(unittest.TestCase):
         self.counter=0
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE5))
         self.assertEqual(0,  self.counter)
+
+    def testRemoveSelf(self):
+        view = puremvc.core.View.getInstance()
+        view.registerMediator(utils.view.ViewTestMediator2(self))
+        view.registerMediator(utils.view.ViewTestMediator3(self))
+
+        self.assertTrue(self.NOTE5 in view.observerMap)
+        view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE5))
+        self.assertFalse(self.NOTE5 in view.observerMap)

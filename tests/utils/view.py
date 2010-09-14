@@ -31,10 +31,16 @@ class ViewTestMediator2(puremvc.patterns.mediator.Mediator, puremvc.interfaces.I
         puremvc.patterns.mediator.Mediator.__init__(self, ViewTestMediator2.NAME, view)
 
     def listNotificationInterests(self):
-        return [self.viewComponent.NOTE1,  self.viewComponent.NOTE2]
+        return [
+            self.viewComponent.NOTE1,  
+            self.viewComponent.NOTE2,
+            self.viewComponent.NOTE5,
+        ]
 
     def handleNotification(self, notification):
         self.viewComponent.lastNotification = notification.getName()
+        if notification.getName() == self.viewComponent.NOTE5:
+            self.facade.removeMediator(self.NAME)
                 
 class ViewTestMediator3(puremvc.patterns.mediator.Mediator, puremvc.interfaces.IMediator):
 
@@ -44,10 +50,15 @@ class ViewTestMediator3(puremvc.patterns.mediator.Mediator, puremvc.interfaces.I
         puremvc.patterns.mediator.Mediator.__init__(self, ViewTestMediator3.NAME, view)
 
     def listNotificationInterests(self):
-        return [self.viewComponent.NOTE3]
+        return [
+            self.viewComponent.NOTE3,
+            self.viewComponent.NOTE5,
+        ]
 
     def handleNotification(self, notification):
         self.viewComponent.lastNotification = notification.getName()
+        if notification.getName() == self.viewComponent.NOTE5:
+            self.facade.removeMediator(self.NAME)
         
 class ViewTestMediator4(puremvc.patterns.mediator.Mediator, puremvc.interfaces.IMediator):
 

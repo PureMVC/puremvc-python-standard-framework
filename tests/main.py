@@ -30,6 +30,7 @@ if __name__ == '__main__':
     TestSuite.addTest(view.ViewTest("testRemoveMediatorAndSubsequentNotify"))
     TestSuite.addTest(view.ViewTest("testRemoveOneOfTwoMediatorsAndSubsequentNotify"))
     TestSuite.addTest(view.ViewTest("testMediatorReregistration"))
+    TestSuite.addTest(view.ViewTest("testRemoveSelf"))
     
     TestSuite.addTest(command.CommandTest("testMacroCommandExecute"))
     TestSuite.addTest(command.CommandTest("testSimpleCommandExecute"))

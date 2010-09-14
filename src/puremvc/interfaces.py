@@ -4,7 +4,7 @@
  Your reuse is governed by the Creative Commons Attribution 3.0 License 
 """
 
-class ICommand:
+class ICommand(object):
     """
     The interface definition for a PureMVC Command.
 
@@ -20,7 +20,7 @@ class ICommand:
         """
         raise NotImplemented
 
-class IController:
+class IController(object):
     """
     The interface definition for a PureMVC Controller.
 
@@ -79,7 +79,7 @@ class IController:
         """
         raise NotImplemented
 
-class IFacade:
+class IFacade(object):
     """
     The interface definition for a PureMVC Facade.
     
@@ -198,7 +198,7 @@ class IFacade:
         """
         raise NotImplemented
 
-class IMediator:
+class IMediator(object):
     """
     The interface definition for a PureMVC Mediator.
     
@@ -284,7 +284,7 @@ class IMediator:
         """
         raise NotImplemented
 
-class IModel:
+class IModel(object):
     """
     The interface definition for a PureMVC Model.
     
@@ -330,7 +330,7 @@ class IModel:
         """
         raise NotImplemented
 
-class INotification:
+class INotification(object):
     """
     The interface definition for a PureMVC Notification.
 
@@ -397,7 +397,7 @@ class INotification:
         """
         raise NotImplemented
 
-class INotifier:
+class INotifier(object):
     """
     The interface definition for a PureMVC Notifier.
     
@@ -431,7 +431,7 @@ class INotifier:
         """
         raise NotImplemented
 
-class IObserver:
+class IObserver(object):
     """
     The interface definition for a PureMVC Observer.
 
@@ -507,7 +507,7 @@ class IObserver:
         """
         raise NotImplemented  
 
-class IProxy:
+class IProxy(object):
     """
     The interface definition for a PureMVC Proxy.
 
@@ -533,7 +533,7 @@ class IProxy:
         """
         raise NotImplemented
 
-    def setData(data):
+    def setData(self, data):
         """
         Set the data object
          
@@ -541,7 +541,7 @@ class IProxy:
         """
         raise NotImplemented
     
-    def getData():
+    def getData(self):
         """
         Get the data object
          
@@ -549,19 +549,19 @@ class IProxy:
         """
         raise NotImplemented 
 
-    def onRegister( ):
+    def onRegister(self):
         """
         Called by the Model when the Proxy is registered
         """
         raise NotImplemented
 
-    def onRemove( ):
+    def onRemove(self):
         """
         Called by the Model when the Proxy is removed
         """
         raise NotImplemented
 
-class IView:
+class IView(object):
     """
     The interface definition for a PureMVC View.
     

@@ -7,7 +7,7 @@
 import puremvc.interfaces
 import puremvc.patterns.facade
 
-class Observer(object, puremvc.interfaces.IObserver):
+class Observer(puremvc.interfaces.IObserver):
     """
     A base C{IObserver} implementation.
     
@@ -96,7 +96,7 @@ class Observer(object, puremvc.interfaces.IObserver):
         return (obj is self.context)
 
 
-class Notifier(object, puremvc.interfaces.INotifier):
+class Notifier(puremvc.interfaces.INotifier):
     """
     A Base C{INotifier} implementation.
     
@@ -143,7 +143,7 @@ class Notifier(object, puremvc.interfaces.INotifier):
         self.facade.sendNotification(notificationName, body, type)
 
 
-class Notification(object, puremvc.interfaces.INotification):
+class Notification(puremvc.interfaces.INotification):
     """
     A base C{INotification} implementation.
     

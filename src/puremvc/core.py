@@ -7,7 +7,7 @@
 import puremvc.interfaces
 import puremvc.patterns.observer
 
-class Controller(object,puremvc.interfaces.IController):
+class Controller(puremvc.interfaces.IController):
     """
     A Singleton C{IController} implementation.
     
@@ -130,7 +130,7 @@ class Controller(object,puremvc.interfaces.IController):
             del self.commandMap[notificationName]
         
 
-class Model(object,puremvc.interfaces.IModel):
+class Model(puremvc.interfaces.IModel):
     """
     A Singleton C{IModel} implementation.
     
@@ -222,7 +222,7 @@ class Model(object,puremvc.interfaces.IModel):
             proxy.onRemove()
         return proxy
 
-class View(object,puremvc.interfaces.IView):
+class View(puremvc.interfaces.IView):
     """
     A Singleton C{IView} implementation.
     
@@ -287,7 +287,7 @@ class View(object,puremvc.interfaces.IView):
         @param notificationName: the name of the C{INotifications} to notify this C{IObserver} of
         @param observer: the C{IObserver} to register
         """
-        if self.observerMap.get(notificationName,None) == None: 
+        if not notificationName in self.observerMap:
             self.observerMap[notificationName] = []
         self.observerMap[notificationName].append(observer)
 
@@ -301,11 +301,9 @@ class View(object,puremvc.interfaces.IView):
         
         @param notification: the C{INotification} to notify C{IObservers} of.
         """
-        if self.observerMap.get(notification.getName(),None) is not None:
-            observers = self.observerMap[notification.getName()]
-            for i in range(0,len(observers)):
-                obsvr = observers[i]
-                obsvr.notifyObserver(notification)
+        observers = self.observerMap.get(notification.getName(), [])[:]
+        for obsvr in observers:
+            obsvr.notifyObserver(notification)
     
     def removeObserver(self, notificationName, notifyContext):
         """
@@ -316,7 +314,7 @@ class View(object,puremvc.interfaces.IView):
         """
         observers = self.observerMap[notificationName]
 
-        for i in range(len(observers)):
+        for i in range(len(observers)-1, -1, -1):
             if observers[i].compareNotifyContext(notifyContext):
                 observers.pop(i)
                 break
@@ -341,7 +339,7 @@ class View(object,puremvc.interfaces.IView):
         @param mediator: a reference to the C{IMediator} instance
         """
         # do not allow re-registration (you must to removeMediator fist)
-        if mediator.getMediatorName() in self.mediatorMap.keys():
+        if mediator.getMediatorName() in self.mediatorMap:
             return
             
         self.mediatorMap[mediator.getMediatorName()] = mediator
@@ -373,38 +371,18 @@ class View(object,puremvc.interfaces.IView):
         """
         for notificationName in self.observerMap.keys():
             observers = self.observerMap[notificationName]
-            removalTargets = []
-            for i in range(0,len(observers)):
+            for i in range(len(observers)-1, -1, -1):
                 if observers[i].compareNotifyContext(self.retrieveMediator(mediatorName)) == True:
-                    removalTargets.append(i)
+                    observers.pop(i)
                     
-            target = 0
-            while len(removalTargets) > 0:
-                target = removalTargets.pop()
-                del observers[target]
-            
             if len(observers) == 0:
                 del self.observerMap[notificationName]
-            else:
-                self.observerMap[notificationName] = observers
                 
         mediator = self.mediatorMap.get(mediatorName,None)
 
         if mediator is not None:
             del self.mediatorMap[mediatorName]
             mediator.onRemove()
-        return mediator
-        
-        mediator = self.mediatorMap.get(mediatorName,None)
-
-        if mediator:
-            interests = mediator.listNotificationInterests()
-            for i in range(len(interests)):
-                removeObserver(interests[i], mediator)
-
-            del self.mediatorMap[mediatorName]
-            mediator.onRemove()
-
         return mediator
     
     def hasMediator(self, mediatorName):

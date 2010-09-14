@@ -8,7 +8,7 @@ import puremvc.core
 import puremvc.interfaces
 import puremvc.patterns.observer
 
-class Facade(object,puremvc.interfaces.IFacade):
+class Facade(puremvc.interfaces.IFacade):
     """
     A base Singleton C{IFacade} implementation.
     

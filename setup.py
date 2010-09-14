@@ -8,4 +8,4 @@ setup(name='PureMVC Python',
       url='http://www.puremvc.org',
 	  package_dir={'': 'src'},
       packages=['puremvc', 'puremvc.patterns'],
-     )
+)
