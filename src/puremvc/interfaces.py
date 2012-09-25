@@ -410,7 +410,7 @@ class INotifier(object):
     
     The C{Notifier} class, which all of the above mentioned classes
     extend, also provides an initialized reference to the C{Facade}
-    Singleton, which is required for the convienience method
+    Singleton, which is required for the convenience method
     for sending C{Notifications}, but also eases implementation as these
     classes have frequent C{Facade} interactions and usually require
     access to the facade anyway.

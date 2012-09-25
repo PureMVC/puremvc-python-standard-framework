@@ -31,7 +31,7 @@ class Mediator(puremvc.patterns.observer.Notifier, puremvc.interfaces.IMediator,
         self.facade = puremvc.patterns.facade.Facade.getInstance()
         mediatorName = mediatorName or self.NAME
         if mediatorName is None:
-            raise ValueError("Madiator name cannot be None")
+            raise ValueError("Mediator name cannot be None")
         self.mediatorName = mediatorName
         self.viewComponent = viewComponent    
     
