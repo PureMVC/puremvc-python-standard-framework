@@ -84,7 +84,7 @@ class Controller(puremvc.interfaces.IController):
         @param note: an C{INotification}
         """
         commandClassRef = self.commandMap.get(note.getName(),None)
-        if (commandClassRef == None):
+        if commandClassRef is None:
             return
             
         commandInstance = commandClassRef()
