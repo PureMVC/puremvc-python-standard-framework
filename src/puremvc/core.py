@@ -359,7 +359,7 @@ class View(puremvc.interfaces.IView):
         @param mediatorName: the name of the C{IMediator} instance to retrieve.
         @return: the C{IMediator} instance previously registered with the given C{mediatorName}.
         """
-        return self.mediatorMap.get(mediatorName,None)
+        return self.mediatorMap.get(mediatorName)
     
 
     def removeMediator(self, mediatorName):
@@ -378,7 +378,7 @@ class View(puremvc.interfaces.IView):
             if len(observers) == 0:
                 del self.observerMap[notificationName]
                 
-        mediator = self.mediatorMap.get(mediatorName,None)
+        mediator = self.mediatorMap.get(mediatorName)
 
         if mediator is not None:
             del self.mediatorMap[mediatorName]
@@ -392,4 +392,4 @@ class View(puremvc.interfaces.IView):
         @param mediatorName: the name of the C{IMediator}
         @return: whether a Mediator is registered with the given C{mediatorName}.
         """
-        return self.mediatorMap.get(mediatorName,None) is not None
+        return self.mediatorMap.get(mediatorName) is not None
