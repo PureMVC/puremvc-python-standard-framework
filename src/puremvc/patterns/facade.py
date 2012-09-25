@@ -90,7 +90,7 @@ class Facade(puremvc.interfaces.IFacade):
         need to send C{INotification}s and thus will likely want to fetch a reference to 
         the C{Facade} during their construction.
         """
-        if (self.controller is not None):
+        if self.controller is not None:
             return
         self.controller = puremvc.core.Controller.getInstance()
         
@@ -117,7 +117,7 @@ class Facade(puremvc.interfaces.IFacade):
         need to send C{INotification}s and thus will likely want to fetch a reference to 
         the C{Facade} during their construction.
         """
-        if (self.model is not None):
+        if  self.model is not None:
             return
         self.model = puremvc.core.Model.getInstance()
     
@@ -144,7 +144,7 @@ class Facade(puremvc.interfaces.IFacade):
         C{INotification}s and thus will likely want to fetch a reference 
         to the C{Facade} during their construction.
         """
-        if (self.view is not None):
+        if self.view is not None:
             return
         self.view = puremvc.core.View.getInstance()
     
@@ -199,7 +199,7 @@ class Facade(puremvc.interfaces.IFacade):
         @return: the C{IProxy} that was removed from the C{Model}
         """
         proxy = None
-        if (self.model is not None):
+        if self.model is not None:
             proxy = self.model.removeProxy(proxyName) 
         return proxy
     
@@ -218,7 +218,7 @@ class Facade(puremvc.interfaces.IFacade):
         
         @param mediator: a reference to the C{IMediator}
         """
-        if (self.view is not None):
+        if self.view is not None:
             self.view.registerMediator(mediator)
 
     def retrieveMediator(self, mediatorName):
@@ -238,7 +238,7 @@ class Facade(puremvc.interfaces.IFacade):
         @return: the C{IMediator} that was removed from the C{View}
         """
         mediator = None
-        if (self.view is not None):
+        if self.view is not None:
             mediator = self.view.removeMediator(mediatorName)            
         return mediator
     
@@ -278,5 +278,5 @@ class Facade(puremvc.interfaces.IFacade):
         
         @param notification: the C{INotification} to have the C{View} notify C{Observers} of.
         """
-        if (self.view is not None):
+        if self.view is not None:
             self.view.notifyObservers(notification)
