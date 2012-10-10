@@ -3,9 +3,9 @@ from core import controller,model,view
 from patterns import command, facade, mediator, observer, proxy
 
 if __name__ == '__main__':
-    
+
     TestSuite = unittest.TestSuite()
-    
+
     TestSuite.addTest(controller.ControllerTest("assertNotNone"))
     TestSuite.addTest(controller.ControllerTest("assertIController"))
     TestSuite.addTest(controller.ControllerTest("testRegisterAndExecuteCommand"))
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     TestSuite.addTest(model.ModelTest("testRegisterAndRemoveProxy"))
     TestSuite.addTest(model.ModelTest("testHasProxy"))
     TestSuite.addTest(model.ModelTest("testOnRegisterAndOnRemove"))
-    
+
     TestSuite.addTest(view.ViewTest("assertNotNone"))
     TestSuite.addTest(view.ViewTest("assertIView"))
     TestSuite.addTest(view.ViewTest("testRegisterAndNotifyObserver"))
@@ -31,10 +31,10 @@ if __name__ == '__main__':
     TestSuite.addTest(view.ViewTest("testRemoveOneOfTwoMediatorsAndSubsequentNotify"))
     TestSuite.addTest(view.ViewTest("testMediatorReregistration"))
     TestSuite.addTest(view.ViewTest("testRemoveSelf"))
-    
+
     TestSuite.addTest(command.CommandTest("testMacroCommandExecute"))
     TestSuite.addTest(command.CommandTest("testSimpleCommandExecute"))
-    
+
     TestSuite.addTest(facade.FacadeTest("assertNotNone"))
     TestSuite.addTest(facade.FacadeTest("assertIFacade"))
     TestSuite.addTest(facade.FacadeTest("testRegisterCommandAndSendNotification"))
@@ -45,19 +45,19 @@ if __name__ == '__main__':
     TestSuite.addTest(facade.FacadeTest("testHasProxy"))
     TestSuite.addTest(facade.FacadeTest("testHasMediator"))
     TestSuite.addTest(facade.FacadeTest("testHasCommand"))
-    
+
     TestSuite.addTest(mediator.MediatorTest("testNameAccessor"))
     TestSuite.addTest(mediator.MediatorTest("testViewAccessor"))
-    
+
     TestSuite.addTest(observer.ObserverTest("testObserverAccessors"))
     TestSuite.addTest(observer.ObserverTest("testObserverConstructor"))
     TestSuite.addTest(observer.ObserverTest("testCompareNotifyContext"))
     TestSuite.addTest(observer.ObserverTest("testNameAccessors"))
     TestSuite.addTest(observer.ObserverTest("testBodyAccessors"))
     TestSuite.addTest(observer.ObserverTest("testConstructor"))
-    
+
     TestSuite.addTest(proxy.ProxyTest("testNameAccessor"))
     TestSuite.addTest(proxy.ProxyTest("testDataAccessors"))
     TestSuite.addTest(proxy.ProxyTest("testConstructor"))
-    
+
     unittest.TextTestRunner(verbosity=2).run(TestSuite)
