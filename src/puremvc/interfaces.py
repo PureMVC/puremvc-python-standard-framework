@@ -157,7 +157,7 @@ class IFacade(INotifier):
         """
         raise NotImplementedError(self)
 
-    def retreieveProxy(self, proxyName):
+    def retrieveProxy(self, proxyName):
         """
         Retrieve a C{IProxy} from the C{Model} by name.
 
@@ -218,7 +218,7 @@ class IFacade(INotifier):
         """
         raise NotImplementedError(self)
 
-    def retreieveMediator(self, mediatorName):
+    def retrieveMediator(self, mediatorName):
         """
         Retrieve an C{IMediator} instance from the C{View}.
 
