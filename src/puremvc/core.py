@@ -83,7 +83,7 @@ class Controller(puremvc.interfaces.IController):
         
         @param note: an C{INotification}
         """
-        commandClassRef = self.commandMap.get(note.getName(),None)
+        commandClassRef = self.commandMap.get(note.getName())
         if commandClassRef is None:
             return
             
@@ -105,7 +105,7 @@ class Controller(puremvc.interfaces.IController):
         @param notificationName: the name of the C{INotification}
         @param commandClassRef: the C{Class} of the C{ICommand}
         """
-        if self.commandMap.get(notificationName,None) is None:
+        if self.commandMap.get(notificationName) is None:
             self.view.registerObserver(notificationName, puremvc.patterns.observer.Observer(self.executeCommand, self))
     
         self.commandMap[notificationName] = commandClassRef
@@ -117,7 +117,7 @@ class Controller(puremvc.interfaces.IController):
         @param notificationName: the name of the C{INotification}
         @return: whether a Command is currently registered for the given C{notificationName}.
         """
-        return self.commandMap.get(notificationName,None) is not None
+        return self.commandMap.get(notificationName) is not None
 
     def removeCommand(self, notificationName):
         """
@@ -198,7 +198,7 @@ class Model(puremvc.interfaces.IModel):
         @param proxyName: the name of the C{IProxy}
         @return: the C{IProxy} instance previously registered with the given C{proxyName}.
         """
-        return self.proxyMap.get(proxyName,None)
+        return self.proxyMap.get(proxyName)
     
     def hasProxy(self, proxyName):
         """
@@ -207,7 +207,7 @@ class Model(puremvc.interfaces.IModel):
         @param proxyName: the name of the C{IProxy}
         @return: whether a Proxy is currently registered with the given C{proxyName}.
         """
-        return self.proxyMap.get(proxyName,None) is not None
+        return self.proxyMap.get(proxyName) is not None
 
     def removeProxy(self, proxyName):
         """
@@ -216,7 +216,7 @@ class Model(puremvc.interfaces.IModel):
         @param proxyName: name of the C{IProxy} instance to be removed.
         @return: the C{IProxy} that was removed from the C{Model}
         """
-        proxy = self.proxyMap.get(proxyName,None)
+        proxy = self.proxyMap.get(proxyName)
         if proxy:
             del self.proxyMap[proxyName]
             proxy.onRemove()
