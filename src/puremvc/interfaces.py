@@ -37,7 +37,7 @@ class INotifier(object):
         @param body: the body of the notification (optional)
         @param type: the type of the notification (optional)
         """
-        raise NotImplemented(self)
+        raise NotImplementedError(self)
 
 
 class ICommand(INotifier):
@@ -54,7 +54,7 @@ class ICommand(INotifier):
 
         @param notification: an C{INotification} to handle.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IController(object):
@@ -89,7 +89,7 @@ class IController(object):
         @param notificationName: the name of the C{INotification}
         @param commandClassRef: the Class of the C{ICommand}
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def executeCommand(self, notification):
         """
@@ -97,7 +97,7 @@ class IController(object):
 
         @param notification: the C{INotification} to execute the associated C{ICommand} for
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeCommand(self, notificationName):
         """
@@ -105,7 +105,7 @@ class IController(object):
 
         @param notificationName: the name of the C{INotification} to remove the C{ICommand} mapping fo
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def hasCommand(self, notificationName):
         """
@@ -114,7 +114,7 @@ class IController(object):
         @param notificationName: the name of the C{INotification}
         @return: whether a Command is currently registered for the given C{notificationName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IFacade(INotifier):
@@ -147,7 +147,7 @@ class IFacade(INotifier):
 
         @param note: the C{INotification} to notify C{IObserver}s of.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def registerProxy(self, proxy):
         """
@@ -155,7 +155,7 @@ class IFacade(INotifier):
 
         @param proxy: the C{IProxy} to be registered with the C{Model}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def retreieveProxy(self, proxyName):
         """
@@ -164,7 +164,7 @@ class IFacade(INotifier):
         @param proxyName: the name of the C{IProxy} instance to be retrieved.
         @return: the C{IProxy} previously regisetered by C{proxyName} with the C{Model}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeProxy(self, proxyName):
         """
@@ -173,7 +173,7 @@ class IFacade(INotifier):
         @param proxyName: the C{IProxy} to remove from the C{Model}.
         @return: the C{IProxy} that was removed from the C{Model}
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def hasProxy(self, proxyName):
         """
@@ -182,7 +182,7 @@ class IFacade(INotifier):
         @param proxyName:
         @return: whether a Proxy is currently registered with the given C{proxyName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def registerCommand(self, noteName, commandClassRef):
         """
@@ -191,7 +191,7 @@ class IFacade(INotifier):
         @param noteName: the name of the C{INotification} to associate the C{ICommand} with.
         @param commandClassRef: a reference to the C{Class} of the C{ICommand}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeCommand(self, notificationName):
         """
@@ -199,7 +199,7 @@ class IFacade(INotifier):
 
         @param notificationName: the name of the C{INotification} to remove the C{ICommand} mapping for
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def hasCommand(self, notificationName):
         """
@@ -208,7 +208,7 @@ class IFacade(INotifier):
         @param notificationName: the name of the C{INotification}
         @return: whether a Command is currently registered for the given C{notificationName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def registerMediator(self, mediator):
         """
@@ -216,7 +216,7 @@ class IFacade(INotifier):
 
         @param mediator: a reference to the C{Mediator} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def retreieveMediator(self, mediatorName):
         """
@@ -225,7 +225,7 @@ class IFacade(INotifier):
         @param mediatorName: the name of the C{IMediator} instance to retrievve
         @return: the C{IMediator} previously registered with the given C{mediatorName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeMediator(self, mediatorName):
         """
@@ -234,7 +234,7 @@ class IFacade(INotifier):
         @param mediatorName: name of the C{IMediator} instance to be removed.
         @return: the C{IMediator} instance previously registered with the given C{mediatorName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IMediator(INotifier):
@@ -277,7 +277,7 @@ class IMediator(INotifier):
 
         @return: the C{IMediator} instance name
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def getViewComponent(self):
         """
@@ -285,7 +285,7 @@ class IMediator(INotifier):
 
         @return: the view component
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def setViewComponent(self, viewComponent):
         """
@@ -293,7 +293,7 @@ class IMediator(INotifier):
 
         @param viewComponent: the view component
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def listNotificationInterests(self):
         """
@@ -301,7 +301,7 @@ class IMediator(INotifier):
 
         @return: an C{List} of the C{INotification} names this C{IMediator} has an interest in.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def handleNotification(self, notification):
         """
@@ -309,19 +309,19 @@ class IMediator(INotifier):
 
         @param notification: the C{INotification} to be handled
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def onRegister(self):
         """
         Called by the View when the Mediator is registered
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def onRemove(self):
         """
         Called by the View when the Mediator is removed
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IModel(object):
@@ -341,7 +341,7 @@ class IModel(object):
 
         @param proxy: an object reference to be held by the C{Model}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def retrieveProxy(self, proxyName):
         """
@@ -350,7 +350,7 @@ class IModel(object):
         @param proxyName: name of the C{IProxy} instance to retrieve.
         @return: the C{IProxy} instance previously registered with the given C{proxyName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeProxy(self, proxyName):
         """
@@ -359,7 +359,7 @@ class IModel(object):
         @param proxyName: name of the C{IProxy} instance to be removed.
         @return: the C{IProxy} that was removed from the C{Model}
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def hasProxy(self, proxyName):
         """
@@ -368,7 +368,7 @@ class IModel(object):
         @param proxyName: name of the C{IProxy} instance
         @return: whether a Proxy is currently registered with the given C{proxyName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class INotification(object):
@@ -406,37 +406,37 @@ class INotification(object):
         """
         Get the name of the C{INotification} instance.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def setBody(self, body):
         """
         Set the body of the C{INotification} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def getBody(self):
         """
         Get the body of the C{INotification} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def setType(self, type):
         """
         Set the type of the C{INotification} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def getType(self):
         """
         Get the type of the C{INotification} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def str(self):
         """
         Get the string representation of the C{INotification} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IObserver(object):
@@ -488,7 +488,7 @@ class IObserver(object):
 
         @param notifyMethod: the notification (callback) method of the interested object
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def setNotifyContext(self, notifyContext):
         """
@@ -496,7 +496,7 @@ class IObserver(object):
 
         @param notifyContext: the notification context of the interested object
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def notifyObserver(self, notification):
         """
@@ -504,7 +504,7 @@ class IObserver(object):
 
         @param notification: the C{INotification} to pass to the interested object's notification method
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def compareNotifyContext(self, object):
         """
@@ -513,7 +513,7 @@ class IObserver(object):
         @param object: the object to compare.
         @return: boolean indicating if the notification context and the object are the same.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IProxy(INotifier):
@@ -540,7 +540,7 @@ class IProxy(INotifier):
 
         @return: the Proxy instance name
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def setData(self, data):
         """
@@ -548,7 +548,7 @@ class IProxy(INotifier):
 
          @param data: the data object
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def getData(self):
         """
@@ -556,19 +556,19 @@ class IProxy(INotifier):
 
          @return: the data as type Object
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def onRegister(self):
         """
         Called by the Model when the Proxy is registered
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def onRemove(self):
         """
         Called by the Model when the Proxy is removed
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
 
 class IView(object):
@@ -602,7 +602,7 @@ class IView(object):
         @param notificationName: the name of the C{INotifications} to notify this C{IObserver} of
         @param observer: the C{IObserver} to register
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def notifyObservers(self, notification):
         """
@@ -614,7 +614,7 @@ class IView(object):
 
         @param notification: the C{INotification} to notify C{IObservers} of.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def registerMediator(self, mediator):
         """
@@ -632,7 +632,7 @@ class IView(object):
 
         @param mediator: a reference to the C{IMediator} instance
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def retrieveMediator(self, mediatorName):
         """
@@ -641,7 +641,7 @@ class IView(object):
         @param mediatorName: the name of the C{IMediator} instance to retrieve.
         @return: the C{IMediator} instance previously registered with the given C{mediatorName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def removeMediator(self, mediatorName):
         """
@@ -650,7 +650,7 @@ class IView(object):
         @param mediatorName: name of the C{IMediator} instance to be removed.
         @return: the C{IMediator} that was removed from the C{View}
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
 
     def hasMediator(self, mediatorName):
         """
@@ -659,4 +659,4 @@ class IView(object):
         @param mediatorName: name of the C{IMediator}
         @return: whether a Mediator is registered with the given C{mediatorName}.
         """
-        raise NotImplemented
+        raise NotImplementedError(self)
