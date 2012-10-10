@@ -100,7 +100,7 @@ class Controller(puremvc.interfaces.IController):
         used, the new C{ICommand} is used instead.
         
         The Observer for the new ICommand is only created if this the 
-        first time an ICommand has been regisered for this Notification name.
+        first time an ICommand has been registered for this Notification name.
         
         @param notificationName: the name of the C{INotification}
         @param commandClassRef: the C{Class} of the C{ICommand}
