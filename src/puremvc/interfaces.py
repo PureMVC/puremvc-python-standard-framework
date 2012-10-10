@@ -210,6 +210,18 @@ class IFacade(INotifier):
         """
         raise NotImplementedError(self)
 
+    def hasMediator(self, mediatorName):
+        """
+        Check if a Mediator is registered or not.
+
+        Raises C{NotImplemented} if subclass does not implement this method.
+
+        @param mediatorName: the name of the C{INotification}
+        @return: whether a Mediator is registered with the given
+        C{mediatorName}.
+        """
+        raise NotImplementedError(self)
+
     def registerMediator(self, mediator):
         """
         Register an C{IMediator} instance with the C{View}.
