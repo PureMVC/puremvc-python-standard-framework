@@ -162,7 +162,7 @@ class IFacade(INotifier):
         Retrieve a C{IProxy} from the C{Model} by name.
 
         @param proxyName: the name of the C{IProxy} instance to be retrieved.
-        @return: the C{IProxy} previously regisetered by C{proxyName} with the C{Model}.
+        @return: the C{IProxy} previously registered by C{proxyName} with the C{Model}.
         """
         raise NotImplementedError(self)
 
