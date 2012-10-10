@@ -1,6 +1,13 @@
-import unittest
-from core import controller,model,view
+# Add src folder to Python search paths
+import sys
+
+sys.path.insert(1, "src")
+
+# Normal imports
+from core import controller, model, view
 from patterns import command, facade, mediator, observer, proxy
+import unittest
+
 
 if __name__ == '__main__':
 
