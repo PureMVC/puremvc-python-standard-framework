@@ -105,7 +105,7 @@ class Controller(puremvc.interfaces.IController):
         @param notificationName: the name of the C{INotification}
         @param commandClassRef: the C{Class} of the C{ICommand}
         """
-        if (self.commandMap.get(notificationName,None) == None):
+        if self.commandMap.get(notificationName,None) is None:
             self.view.registerObserver(notificationName, puremvc.patterns.observer.Observer(self.executeCommand, self))
     
         self.commandMap[notificationName] = commandClassRef
