@@ -29,9 +29,6 @@ class Proxy(puremvc.patterns.observer.Notifier, puremvc.interfaces.IProxy, purem
     """
 
     NAME = "Proxy"
-    facade = None
-    proxyName = None
-    data = None
 
     def __init__(self, proxyName=None, data=None):
         """
