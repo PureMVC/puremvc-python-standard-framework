@@ -30,8 +30,6 @@ class MacroCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.IComma
     @see: L{SimpleCommand<puremvc.patterns.command.SimpleCommand>}
     """
 
-    subCommands = None
-
     def __init__(self):
         """
         MacroCommand Constructor
