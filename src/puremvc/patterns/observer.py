@@ -129,7 +129,7 @@ class Notifier(puremvc.interfaces.INotifier):
         """
         self.facade = puremvc.patterns.facade.Facade.getInstance()
 
-    def sendNotification(self, notificationName, body=None, type=None):
+    def sendNotification(self, notificationName, body=None, noteType=None):
         """
         Create and send an C{INotification}.
 
@@ -138,7 +138,7 @@ class Notifier(puremvc.interfaces.INotifier):
 
         @param notificationName: the name of the notification to send
         @param body: the body of the notification (optional)
-        @param type: the type of the notification (optional)
+        @param noteType: the type of the notification (optional)
         """
         self.facade.sendNotification(notificationName, body, type)
 
@@ -179,17 +179,17 @@ class Notification(puremvc.interfaces.INotification):
     body = None
     type = None
 
-    def __init__(self,    name, body=None, type=None):
+    def __init__(self, name, body=None, noteType=None):
         """
         Constructor.
 
         @param name: name of the C{Notification} instance. (required)
         @param body: the C{Notification} body. (optional)
-        @param type; the type of the C{Notification} (optional)
+        @param noteType: the type of the C{Notification} (optional)
         """
         self.name = name
         self.body = body
-        self.type = type
+        self.type = noteType
 
     def getName(self):
         """
