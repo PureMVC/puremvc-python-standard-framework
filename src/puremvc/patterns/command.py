@@ -76,9 +76,9 @@ class MacroCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.IComma
 
         @param notification: the C{INotification} object to be passed to each I{SubCommand}.
         """
-        while len(self.subCommands) > 0:
-            commandClassRef = self.subCommands.pop(0)
+        for commandClassRef in self.subCommands[:]:
             commandInstance = commandClassRef()
+            commandInstance.initializeNotifier(self.multitonKey)
             commandInstance.execute(notification)
 
 
