@@ -520,7 +520,7 @@ class IObserver(object):
 
     def compareNotifyContext(self, obj):
         """
-        Compare the given object to the notificaiton context object.
+        Compare the given object to the notification context object.
 
         @param obj: the object to compare.
         @return: boolean indicating if the notification context and the object are the same.
