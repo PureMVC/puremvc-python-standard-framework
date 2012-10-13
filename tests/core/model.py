@@ -1,7 +1,6 @@
 import unittest
 
 import puremvc.interfaces
-import puremvc.patterns.observer
 import puremvc.patterns.proxy
 import puremvc.core
 import utils.model
