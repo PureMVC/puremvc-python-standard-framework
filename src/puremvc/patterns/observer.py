@@ -28,8 +28,6 @@ class Observer(puremvc.interfaces.IObserver):
     @see: L{View<org.puremvc.as3.core.view.View>}
     @see: L{Notification<org.puremvc.as3.patterns.observer.Notification>}
     """
-    notify = None
-    context = None
 
     def __init__(self, notifyMethod, notifyContext):
         """
@@ -41,6 +39,9 @@ class Observer(puremvc.interfaces.IObserver):
         @param notifyMethod: the notification method of the interested object
         @param notifyContext: the notification context of the interested object
         """
+        self.notify = None
+        self.context = None
+
         self.setNotifyMethod(notifyMethod)
         self.setNotifyContext(notifyContext)
 
@@ -121,8 +122,6 @@ class Notifier(puremvc.interfaces.INotifier):
     @see: L{MacroCommand<org.puremvc.as3.patterns.command.MacroCommand>}
     """
 
-    facade = None
-
     def __init__(self):
         """
         Notifier Constructor
@@ -174,10 +173,6 @@ class Notification(puremvc.interfaces.INotification):
 
     @see: L{Observer<org.puremvc.as3.patterns.observer.Observer>}
     """
-
-    name = None
-    body = None
-    type = None
 
     def __init__(self, name, body=None, noteType=None):
         """
