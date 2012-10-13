@@ -11,9 +11,9 @@ class ProxyTest(unittest.TestCase):
         prxy = puremvc.patterns.proxy.Proxy('TestProxy')
         self.assertEqual(True, prxy.getProxyName() == 'TestProxy')
 
-    def testDataAccessors(self): 
+    def testDataAccessors(self):
         """ProxyTest: Test Data Accessors"""
-        
+
         prxy = puremvc.patterns.proxy.Proxy('colors')
         prxy.setData(['red', 'green', 'blue'])
         data = prxy.getData()
@@ -23,7 +23,7 @@ class ProxyTest(unittest.TestCase):
         self.assertEqual(True, data[1]  == 'green')
         self.assertEqual(True, data[2]  == 'blue')
 
-    def testConstructor(self): 
+    def testConstructor(self):
         """ProxyTest: Test Constructor"""
 
         prxy = puremvc.patterns.proxy.Proxy('colors',['red', 'green', 'blue'])

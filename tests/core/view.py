@@ -1,5 +1,5 @@
 import unittest
-    
+
 import puremvc.interfaces
 import puremvc.patterns.observer
 import puremvc.patterns.proxy
@@ -9,7 +9,7 @@ import utils.view
 
 class ViewTest(unittest.TestCase):
     """ViewTest: Test View Singleton"""
-    
+
     lastNotification = None
     onRegisterCalled = False
     onRemoveCalled = False
@@ -26,11 +26,11 @@ class ViewTest(unittest.TestCase):
         puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator3.NAME)
         puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator4.NAME)
         puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator5.NAME)
-    
+
     def assertNotNone(self):
         """ViewTest: Test instance not null"""
         view = puremvc.core.View.getInstance()
-        self.assertNotEqual(None, view) 
+        self.assertNotEqual(None, view)
 
     def assertIView(self):
         """ViewTest: Test instance implements IView"""
@@ -39,18 +39,18 @@ class ViewTest(unittest.TestCase):
 
     def testRegisterAndNotifyObserver(self):
         """ViewTest: Test registerObserver() and notifyObservers()"""
-        
+
         self.viewTestVar = 0
         def viewTestMethod(note):
             self.viewTestVar = note.getBody()
-        
+
         view = puremvc.core.View.getInstance()
         obsvr = puremvc.patterns.observer.Observer(viewTestMethod, self)
         view.registerObserver(utils.view.ViewTestNote.NAME, obsvr)
-        
+
         note = utils.view.ViewTestNote.create(10)
         view.notifyObservers(note)
-        
+
         self.assertEqual(True, self.viewTestVar == 10)
 
     def testRegisterAndRetrieveMediator(self):
@@ -59,12 +59,12 @@ class ViewTest(unittest.TestCase):
 
         viewTestMediator = utils.view.ViewTestMediator(self)
         view.registerMediator(viewTestMediator)
-        
+
         mediator = view.retrieveMediator(utils.view.ViewTestMediator.NAME)
-            
+
         self.assertEqual(True, isinstance(mediator, utils.view.ViewTestMediator))
         self.__cleanup()
-            
+
     def testHasMediator(self):
         """ViewTest: Test hasMediator()"""
         view = puremvc.core.View.getInstance()
@@ -112,32 +112,32 @@ class ViewTest(unittest.TestCase):
         view = puremvc.core.View.getInstance()
 
         view.registerMediator(utils.view.ViewTestMediator(self))
-    
+
         self.assertEqual(True, isinstance(view.retrieveMediator(utils.view.ViewTestMediator.NAME), utils.view.ViewTestMediator))
 
         view.removeMediator(utils.view.ViewTestMediator.NAME)
-        
+
         self.assertEqual(True, view.retrieveMediator(utils.view.ViewTestMediator.NAME) == None)
-    
+
         self.assertEqual(True, view.removeMediator(utils.view.ViewTestMediator.NAME) == None)
 
         view.registerMediator(utils.view.ViewTestMediator(self))
-    
+
         self.assertEqual(True, isinstance(view.retrieveMediator(utils.view.ViewTestMediator.NAME), utils.view.ViewTestMediator))
 
         view.removeMediator(utils.view.ViewTestMediator.NAME)
-            
+
         self.assertEqual(True, view.retrieveMediator(utils.view.ViewTestMediator.NAME) == None)
 
-        self.__cleanup()                                    
-    
-    def testRemoveMediatorAndSubsequentNotify(self): 
+        self.__cleanup()
+
+    def testRemoveMediatorAndSubsequentNotify(self):
         """ViewTest: Test removeMediator() and subsequent nofity()"""
 
         view = puremvc.core.View.getInstance()
-    
+
         view.registerMediator(utils.view.ViewTestMediator2(self))
-    
+
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
         self.assertEqual(True, self.lastNotification == self.NOTE1)
 
@@ -145,28 +145,28 @@ class ViewTest(unittest.TestCase):
         self.assertEqual(True, self.lastNotification == self.NOTE2)
 
         view.removeMediator(utils.view.ViewTestMediator2.NAME)
-        
+
         self.assertEqual(True, view.retrieveMediator(utils.view.ViewTestMediator2.NAME) == None)
 
         self.lastNotification = None
-    
+
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
         self.assertEqual(True, self.lastNotification != self.NOTE1)
 
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE2))
         self.assertEqual(True, self.lastNotification != self.NOTE2)
 
-        self.__cleanup()                                    
+        self.__cleanup()
 
-    def testRemoveOneOfTwoMediatorsAndSubsequentNotify(self): 
+    def testRemoveOneOfTwoMediatorsAndSubsequentNotify(self):
         """ViewTest: Test removing one of two Mediators and subsequent notify()"""
-        
+
         view = puremvc.core.View.getInstance()
-        
+
         view.registerMediator(utils.view.ViewTestMediator2(self))
-    
+
         view.registerMediator(utils.view.ViewTestMediator3(self))
-    
+
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
         self.assertEqual(True, self.lastNotification == self.NOTE1)
 
@@ -175,13 +175,13 @@ class ViewTest(unittest.TestCase):
 
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE3))
         self.assertEqual(True, self.lastNotification == self.NOTE3)
-            
+
         view.removeMediator(utils.view.ViewTestMediator2.NAME)
-        
+
         self.assertEqual(True, view.retrieveMediator(utils.view.ViewTestMediator2.NAME) == None)
 
         self.lastNotification = None
-    
+
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE1))
         self.assertEqual(True, self.lastNotification != self.NOTE1)
 
@@ -190,28 +190,28 @@ class ViewTest(unittest.TestCase):
 
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE3))
         self.assertEqual(True, self.lastNotification == self.NOTE3)
-        
-        self.__cleanup()                                    
+
+        self.__cleanup()
 
     def testMediatorReregistration(self):
         """
-        Tests registering the same mediator twice. 
+        Tests registering the same mediator twice.
         A subsequent notification should only illicit
         one response. Also, since reregistration
         was causing 2 observers to be created, ensure
         that after removal of the mediator there will
         be no further response.
-        
+
         Added for the fix deployed in version 2.0.4
         """
-            
+
         view = puremvc.core.View.getInstance()
 
         view.registerMediator(utils.view.ViewTestMediator5(self))
-            
+
         # try to register another instance of that mediator (uses the same NAME constant).
         view.registerMediator(utils.view.ViewTestMediator5(self))
-            
+
         self.counter = 0
         view.notifyObservers(puremvc.patterns.observer.Notification(self.NOTE5))
         self.assertEqual(1, self.counter)

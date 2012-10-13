@@ -5,18 +5,18 @@ import puremvc.patterns.mediator
 class ViewTestNote(puremvc.patterns.observer.Notification, puremvc.interfaces.INotification):
 
     NAME = "ViewTestNote"
-    
+
     def __init__(self, anme, body):
         puremvc.patterns.observer.Notification.__init__(self, ViewTestNote.NAME, body)
-        
+
     @staticmethod
-    def create(body):        
-        return ViewTestNote(ViewTestNote.NAME, body)    
+    def create(body):
+        return ViewTestNote(ViewTestNote.NAME, body)
 
 class ViewTestMediator(puremvc.patterns.mediator.Mediator, puremvc.interfaces.IMediator):
 
     NAME = 'ViewTestMediator'
-        
+
     def __init__(self, view):
         puremvc.patterns.mediator.Mediator.__init__(self, ViewTestMediator.NAME, view)
 
@@ -32,7 +32,7 @@ class ViewTestMediator2(puremvc.patterns.mediator.Mediator, puremvc.interfaces.I
 
     def listNotificationInterests(self):
         return [
-            self.viewComponent.NOTE1,  
+            self.viewComponent.NOTE1,
             self.viewComponent.NOTE2,
             self.viewComponent.NOTE5,
         ]
@@ -41,7 +41,7 @@ class ViewTestMediator2(puremvc.patterns.mediator.Mediator, puremvc.interfaces.I
         self.viewComponent.lastNotification = notification.getName()
         if notification.getName() == self.viewComponent.NOTE5:
             self.facade.removeMediator(self.NAME)
-                
+
 class ViewTestMediator3(puremvc.patterns.mediator.Mediator, puremvc.interfaces.IMediator):
 
     NAME = 'ViewTestMediator3'
@@ -59,7 +59,7 @@ class ViewTestMediator3(puremvc.patterns.mediator.Mediator, puremvc.interfaces.I
         self.viewComponent.lastNotification = notification.getName()
         if notification.getName() == self.viewComponent.NOTE5:
             self.facade.removeMediator(self.NAME)
-        
+
 class ViewTestMediator4(puremvc.patterns.mediator.Mediator, puremvc.interfaces.IMediator):
 
     NAME = 'ViewTestMediator4'

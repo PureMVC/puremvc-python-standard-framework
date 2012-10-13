@@ -6,7 +6,7 @@ class MediatorTest(unittest.TestCase):
     """MediatorTest: Test Mediator Pattern"""
 
     def testNameAccessor(self):
-        """MediatorTest: Test getMediatorName()"""    
+        """MediatorTest: Test getMediatorName()"""
         mdiatr = mediator.Mediator();
         self.assertEqual(True, mdiatr.getMediatorName() == mediator.Mediator.NAME );
 

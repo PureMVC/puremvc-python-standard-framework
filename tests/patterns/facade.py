@@ -9,11 +9,11 @@ import utils.facade
 
 class FacadeTest(unittest.TestCase):
     """FacadeTest: Test Facade Pattern"""
-    
+
     def assertNotNone(self):
         """FacadeTest: Test instance not null"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
-        self.assertNotEqual(None, fcde) 
+        self.assertNotEqual(None, fcde)
 
     def assertIFacade(self):
         """FacadeTest: Test instance implements IFacade"""
@@ -31,7 +31,7 @@ class FacadeTest(unittest.TestCase):
 
         self.assertEqual(True, vo.result == 64)
 
-    def testRegisterAndRemoveCommandAndSendNotification(self): 
+    def testRegisterAndRemoveCommandAndSendNotification(self):
         """FacadeTest: Test removeCommand() and subsequent sendNotification()"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
         fcde.registerCommand('FacadeTestNote', utils.facade.FacadeTestCommand)
@@ -42,7 +42,7 @@ class FacadeTest(unittest.TestCase):
 
         self.assertEqual(True, vo.result != 64)
 
-    def testRegisterAndRetrieveProxy(self): 
+    def testRegisterAndRetrieveProxy(self):
         """FacadeTest: Test registerProxy() and retrieveProxy()"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
         fcde.registerProxy(puremvc.patterns.proxy.Proxy('colors', ['red', 'green', 'blue']))
@@ -58,8 +58,8 @@ class FacadeTest(unittest.TestCase):
         self.assertEqual(True, data[0]  == 'red')
         self.assertEqual(True, data[1]  == 'green')
         self.assertEqual(True, data[2]  == 'blue')
-           
-    def testRegisterAndRemoveProxy(self): 
+
+    def testRegisterAndRemoveProxy(self):
         """FacadeTest: Test registerProxy() and removeProxy()"""
 
         fcde = puremvc.patterns.facade.Facade.getInstance()
@@ -74,7 +74,7 @@ class FacadeTest(unittest.TestCase):
 
         self.assertEqual(True, pxy == None)
 
-    def testRegisterRetrieveAndRemoveMediator(self): 
+    def testRegisterRetrieveAndRemoveMediator(self):
         """FacadeTest: Test registerMediator() retrieveMediator() and removeMediator()"""
 
         fcde = puremvc.patterns.facade.Facade.getInstance()
@@ -88,19 +88,19 @@ class FacadeTest(unittest.TestCase):
 
         self.assertEqual(True, fcde.retrieveMediator(puremvc.patterns.mediator.Mediator.NAME) == None)
 
-    def testHasProxy(self): 
+    def testHasProxy(self):
         """FacadeTest: Test hasProxy()"""
 
         fcde = puremvc.patterns.facade.Facade.getInstance()
         fcde.registerProxy(puremvc.patterns.proxy.Proxy('hasProxyTest', [1,2,3]))
 
         self.assertEqual(True, fcde.hasProxy('hasProxyTest'))
-        
+
         fcde.removeProxy('hasProxyTest')
 
         self.assertEqual(False, fcde.hasProxy('hasProxyTest'))
 
-    def testHasMediator(self): 
+    def testHasMediator(self):
         """FacadeTest: Test hasMediator()"""
 
         fcde = puremvc.patterns.facade.Facade.getInstance()
@@ -111,9 +111,9 @@ class FacadeTest(unittest.TestCase):
         fcde.removeMediator('facadeHasMediatorTest')
 
         self.assertEqual(False, fcde.hasMediator('facadeHasMediatorTest'))
-            
-    def testHasCommand(self): 
-        """FacadeTest: Test hasCommand()"""    
+
+    def testHasCommand(self):
+        """FacadeTest: Test hasCommand()"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
         fcde.registerCommand('facadeHasCommandTest', utils.facade.FacadeTestCommand)
 
