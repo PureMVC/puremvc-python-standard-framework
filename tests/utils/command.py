@@ -21,8 +21,8 @@ class MacroCommandTestVO(object):
     result1 = None
     result2 = None
 
-    def __init__(self, input):
-        self.input = input
+    def __init__(self, input_):
+        self.input = input_
 
 class SimpleCommandTestCommand(puremvc.patterns.command.SimpleCommand):
     def execute(self,note):
@@ -34,5 +34,5 @@ class SimpleCommandTestVO(object):
     input = None
     result = None
 
-    def __init__(self, input):
-        self.input = input
+    def __init__(self, input_):
+        self.input = input_
