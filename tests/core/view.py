@@ -27,12 +27,12 @@ class ViewTest(unittest.TestCase):
         puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator4.NAME)
         puremvc.core.View.getInstance().removeMediator(utils.view.ViewTestMediator5.NAME)
 
-    def assertNotNone(self):
+    def testAssertNotNone(self):
         """ViewTest: Test instance not null"""
         view = puremvc.core.View.getInstance()
         self.assertNotEqual(None, view)
 
-    def assertIView(self):
+    def testAssertIView(self):
         """ViewTest: Test instance implements IView"""
         view = puremvc.core.View.getInstance()
         self.assertEqual(True, isinstance(view, puremvc.interfaces.IView))

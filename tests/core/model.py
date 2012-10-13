@@ -8,12 +8,12 @@ import utils.model
 
 class ModelTest(unittest.TestCase):
     """ModelTest: Test Model Singleton"""
-    def assertNotNone(self):
+    def testAssertNotNone(self):
         """ModelTest: Test instance not null"""
         model = puremvc.core.Model.getInstance()
         self.assertNotEqual(None, model)
 
-    def assertIModel(self):
+    def testAssertIModel(self):
         """ModelTest: Test instance implements IModel"""
         model = puremvc.core.Model.getInstance()
         self.assertEqual(True, isinstance(model, puremvc.interfaces.IModel))

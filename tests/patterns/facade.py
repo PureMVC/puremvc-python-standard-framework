@@ -10,12 +10,12 @@ import utils.facade
 class FacadeTest(unittest.TestCase):
     """FacadeTest: Test Facade Pattern"""
 
-    def assertNotNone(self):
+    def testAssertNotNone(self):
         """FacadeTest: Test instance not null"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
         self.assertNotEqual(None, fcde)
 
-    def assertIFacade(self):
+    def testAssertIFacade(self):
         """FacadeTest: Test instance implements IFacade"""
         fcde = puremvc.patterns.facade.Facade.getInstance()
         self.assertEqual(True, isinstance(fcde, puremvc.interfaces.IFacade))

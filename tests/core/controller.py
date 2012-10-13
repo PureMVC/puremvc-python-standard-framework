@@ -6,12 +6,12 @@ import utils.controller
 
 class ControllerTest(unittest.TestCase):
     """ControllerTest: Test Controller Singleton"""
-    def assertNotNone(self):
+    def testAssertNotNone(self):
         """ControllerTest: Test instance not null"""
         controller = puremvc.core.Controller.getInstance()
         self.assertNotEqual(None, controller)
 
-    def assertIController(self):
+    def testAssertIController(self):
         """ControllerTest: Test instance implements IController"""
         controller = puremvc.core.Controller.getInstance()
         self.assertEqual(True, isinstance(controller, puremvc.interfaces.IController))
