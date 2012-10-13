@@ -74,7 +74,7 @@ class MacroCommand(puremvc.patterns.observer.Notifier, puremvc.interfaces.IComma
         The I{SubCommands} will be called in First In/First Out (FIFO)
         order.
 
-        @param notification: the C{INotification} object to be passsed to each I{SubCommand}.
+        @param notification: the C{INotification} object to be passed to each I{SubCommand}.
         """
         while len(self.subCommands) > 0:
             commandClassRef = self.subCommands.pop(0)
