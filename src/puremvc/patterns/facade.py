@@ -198,10 +198,8 @@ class Facade(puremvc.interfaces.IFacade):
         @param proxyName: the C{IProxy} to remove from the C{Model}.
         @return: the C{IProxy} that was removed from the C{Model}
         """
-        proxy = None
         if self.model is not None:
-            proxy = self.model.removeProxy(proxyName)
-        return proxy
+            return self.model.removeProxy(proxyName)
 
     def hasProxy(self, proxyName):
         """
