@@ -30,7 +30,7 @@ class Mediator(puremvc.patterns.observer.Notifier, puremvc.interfaces.IMediator,
         if mediatorName is None:
             raise ValueError("Mediator name cannot be None")
         self.mediatorName = mediatorName
-        self.viewComponent = viewComponent
+        self.setViewComponent(viewComponent)
 
     def getMediatorName(self):
         """
