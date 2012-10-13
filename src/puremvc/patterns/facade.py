@@ -258,7 +258,7 @@ class Facade(puremvc.interfaces.IFacade):
         Keeps us from having to construct new notification
         instances in our implementation code.
 
-        @param notificationName: the name of the notiification to send
+        @param notificationName: the name of the notification to send
         @param body: the body of the notification (optional)
         @param noteType: the type of the notification (optional)
         """
