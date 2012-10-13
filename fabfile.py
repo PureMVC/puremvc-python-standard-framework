@@ -17,7 +17,7 @@ def docs():
     'Build docs'
 
     local("rm -rf ./docs/*")
-    local("epydoc --html --name 'PureMVC Python' ./src/puremvc -o ./docs/")
+    local("epydoc -v --html --name 'PureMVC Python' ./src/puremvc -o ./docs/")
 
 
 def test():
