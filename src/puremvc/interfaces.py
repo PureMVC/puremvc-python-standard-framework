@@ -432,7 +432,7 @@ class INotification(object):
         """
         raise NotImplementedError(self)
 
-    def setType(self, type):
+    def setType(self, noteType):
         """
         Set the type of the C{INotification} instance
         """
@@ -518,11 +518,11 @@ class IObserver(object):
         """
         raise NotImplementedError(self)
 
-    def compareNotifyContext(self, object):
+    def compareNotifyContext(self, obj):
         """
         Compare the given object to the notificaiton context object.
 
-        @param object: the object to compare.
+        @param obj: the object to compare.
         @return: boolean indicating if the notification context and the object are the same.
         """
         raise NotImplementedError(self)
