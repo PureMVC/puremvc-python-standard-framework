@@ -628,6 +628,19 @@ class IView(object):
         """
         raise NotImplementedError(self)
 
+    def removeObserver(self, notificationName, notifyContext):
+        """
+        Remove a group of observers from the observer list for a given
+        Notification name.
+
+        Raises C{NotImplemented} if subclass does not implement this method.
+
+        @param notificationName: which observer list to remove from
+        @param notifyContext: removed the observers with this object as their
+        notifyContext
+        """
+        raise NotImplementedError(self)
+
     def registerMediator(self, mediator):
         """
         Register an C{IMediator} instance with the C{View}.
