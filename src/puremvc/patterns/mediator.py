@@ -16,9 +16,6 @@ class Mediator(puremvc.patterns.observer.Notifier, puremvc.interfaces.IMediator,
     """
 
     NAME = "Mediator"
-    facade = None
-    viewComponent = None
-    mediatorName = None
 
     def __init__(self, mediatorName=None, viewComponent=None):
         """
