@@ -42,7 +42,8 @@ class Proxy(puremvc.patterns.observer.Notifier, puremvc.interfaces.IProxy, purem
         if proxyName is None:
             raise ValueError("Proxy name cannot be None")
         self.proxyName = proxyName
-        self.setData(data)
+        if data is not None:
+            self.setData(data)
 
     def getProxyName(self):
         """

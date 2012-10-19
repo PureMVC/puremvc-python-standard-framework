@@ -35,3 +35,13 @@ class ProxyTest(unittest.TestCase):
         self.assertEqual(True, data[0]  == 'red')
         self.assertEqual(True, data[1]  == 'green')
         self.assertEqual(True, data[2]  == 'blue')
+
+    def testEmptyData(self):
+        """ProxyTest: Test Constructor with not-null empty data"""
+
+        values = ["", (), []]
+
+        for value in values:
+            proxy = puremvc.patterns.proxy.Proxy("empty", value)
+
+            self.assertEqual(proxy.data, value)
