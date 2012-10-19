@@ -9,7 +9,7 @@ class ModelTestProxy(puremvc.patterns.proxy.Proxy):
         puremvc.patterns.proxy.Proxy.__init__(self, ModelTestProxy.NAME, object())
 
     def onRegister(self):
-        self.setData(ModelTestProxy.ON_REGISTER_CALLED)        
+        self.setData(ModelTestProxy.ON_REGISTER_CALLED)
 
     def onRemove(self):
-        self.setData(ModelTestProxy.ON_REMOVE_CALLED) 
+        self.setData(ModelTestProxy.ON_REMOVE_CALLED)

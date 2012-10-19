@@ -42,9 +42,10 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="puremvc-module.html">Package&nbsp;puremvc</a> ::
-        <a href="puremvc.patterns-module.html">Package&nbsp;patterns</a> ::
-        <a href="puremvc.patterns.facade-module.html">Module&nbsp;facade</a> ::
+        puremvc ::
+        patterns ::
+        facade ::
+        Facade ::
         Class&nbsp;Facade
       </span>
     </td>
@@ -61,14 +62,16 @@
     </td>
   </tr>
 </table>
-<!-- ==================== TYPE DESCRIPTION ==================== -->
-<h1 class="epydoc">type Facade</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Facade</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade">source&nbsp;code</a></span></p>
 <pre class="base-tree">
-            object --+
-                     |
-<a href="puremvc.interfaces.IFacade-class.html">interfaces.IFacade</a> --+
-                     |
-                    <strong class="uidshort">Facade</strong>
+          object --+        
+                   |        
+<a href="puremvc.interfaces.INotifier-class.html">interfaces.INotifier</a> --+    
+                       |    
+      <a href="puremvc.interfaces.IFacade-class.html">interfaces.IFacade</a> --+
+                           |
+                          <strong class="uidshort">Facade</strong>
 </pre>
 
 <hr />
@@ -398,7 +401,7 @@
           <td><span class="summary-sig"><a href="puremvc.patterns.facade.Facade-class.html#sendNotification" class="summary-sig-name">sendNotification</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">notificationName</span>,
         <span class="summary-sig-arg">body</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default">None</span>)</span><br />
+        <span class="summary-sig-arg">noteType</span>=<span class="summary-sig-default">None</span>)</span><br />
       Create and send an <code>INotification</code>.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.sendNotification">source&nbsp;code</a></span>
@@ -429,9 +432,19 @@
   </tr>
   <tr>
     <td colspan="2" class="summary">
-    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="puremvc.interfaces.IFacade-class.html">interfaces.IFacade</a></code></b>:
-      <code><a href="puremvc.interfaces.IFacade-class.html#retreieveMediator">retreieveMediator</a></code>,
-      <code><a href="puremvc.interfaces.IFacade-class.html#retreieveProxy">retreieveProxy</a></code>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
       </p>
     </td>
   </tr>
@@ -455,7 +468,7 @@
 </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
+      <span class="summary-type">a new object with type S, a subtype of T</span>
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
@@ -538,6 +551,31 @@
     </td>
   </tr>
 </table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
 <table class="details" border="1" cellpadding="3"
@@ -577,6 +615,7 @@
   not call the constructor directly, but instead call the static Singleton 
   method <code>Facade.getInstance()</code></p>
   <dl class="fields">
+    <dt>Returns: a new object with type S, a subtype of T</dt>
     <dt>Overrides:
         object.__new__
     </dt>
@@ -873,6 +912,9 @@
     <dt>Returns:</dt>
         <dd>the <code>IProxy</code> instance previously registered with the 
           given <code>proxyName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#retrieveProxy">interfaces.IFacade.retrieveProxy</a>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -987,6 +1029,9 @@
     <dt>Returns:</dt>
         <dd>the <code>IMediator</code> previously registered with the given 
           <code>mediatorName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#retrieveMediator">interfaces.IFacade.retrieveMediator</a>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -1044,6 +1089,9 @@
     <dt>Returns:</dt>
         <dd>whether a Mediator is registered with the given 
           <code>mediatorName</code>.</dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.IFacade-class.html#hasMediator">interfaces.IFacade.hasMediator</a>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -1057,7 +1105,7 @@
   <h3 class="epydoc"><span class="sig"><span class="sig-name">sendNotification</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">notificationName</span>,
         <span class="sig-arg">body</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">type</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">noteType</span>=<span class="sig-default">None</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="puremvc.patterns.facade-pysrc.html#Facade.sendNotification">source&nbsp;code</a></span>&nbsp;
@@ -1070,10 +1118,13 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the notiification to send</li>
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the notification to send</li>
         <li><strong class="pname"><code>body</code></strong> - the body of the notification (optional)</li>
-        <li><strong class="pname"><code>type</code></strong> - the type of the notification (optional)</li>
+        <li><strong class="pname"><code>noteType</code></strong> - the type of the notification (optional)</li>
     </ul></dd>
+    <dt>Overrides:
+        <a href="puremvc.interfaces.INotifier-class.html#sendNotification">interfaces.INotifier.sendNotification</a>
+    </dt>
   </dl>
 </td></tr></table>
 </div>
@@ -1141,8 +1192,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Sep 22 01:31:51 2009
+    Generated by Epydoc 3.0.1 on Sun Oct 14 00:58:16 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
