@@ -60,8 +60,14 @@
     </td>
   </tr>
 </table>
-<!-- ==================== CLASSOBJ DESCRIPTION ==================== -->
-<h1 class="epydoc">classobj IModel</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class IModel</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">IModel</strong>
+</pre>
+
 <dl><dt>Known Subclasses:</dt>
 <dd>
       <ul class="subclass-list">
@@ -100,11 +106,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#registerProxy" class="summary-sig-name">registerProxy</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">proxy</span>)</span><br />
-      Register an <code>IProxy</code> instance with the <code>Model</code>.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#hasProxy" class="summary-sig-name">hasProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Check if a Proxy is registered</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.registerProxy">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.hasProxy">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -118,11 +124,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#retrieveProxy" class="summary-sig-name">retrieveProxy</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">proxyName</span>)</span><br />
-      Retrieve an <code>IProxy</code> instance from the Model.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#registerProxy" class="summary-sig-name">registerProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxy</span>)</span><br />
+      Register an <code>IProxy</code> instance with the <code>Model</code>.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.retrieveProxy">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.registerProxy">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -154,16 +160,60 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#hasProxy" class="summary-sig-name">hasProxy</a>(<span class="summary-sig-arg">self</span>,
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IModel-class.html#retrieveProxy" class="summary-sig-name">retrieveProxy</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">proxyName</span>)</span><br />
-      Check if a Proxy is registered</td>
+      Retrieve an <code>IProxy</code> instance from the Model.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.hasProxy">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.retrieveProxy">source&nbsp;code</a></span>
             
           </td>
         </tr>
       </table>
       
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
     </td>
   </tr>
 </table>
@@ -185,6 +235,33 @@
   </td>
 </tr>
 </table>
+<a name="hasProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.hasProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Proxy is registered</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxyName</code></strong> - name of the <code>IProxy</code> instance</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Proxy is currently registered with the given 
+          <code>proxyName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="registerProxy"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -207,33 +284,6 @@
     <dd><ul class="nomargin-top">
         <li><strong class="pname"><code>proxy</code></strong> - an object reference to be held by the <code>Model</code>.</li>
     </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="retrieveProxy"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveProxy</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">proxyName</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.retrieveProxy">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Retrieve an <code>IProxy</code> instance from the Model.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>proxyName</code></strong> - name of the <code>IProxy</code> instance to retrieve.</li>
-    </ul></dd>
-    <dt>Returns:</dt>
-        <dd>the <code>IProxy</code> instance previously registered with the 
-          given <code>proxyName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -264,30 +314,30 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="hasProxy"></a>
+<a name="retrieveProxy"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasProxy</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveProxy</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">proxyName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.hasProxy">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IModel.retrieveProxy">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Check if a Proxy is registered</p>
+  <p>Retrieve an <code>IProxy</code> instance from the Model.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>proxyName</code></strong> - name of the <code>IProxy</code> instance</li>
+        <li><strong class="pname"><code>proxyName</code></strong> - name of the <code>IProxy</code> instance to retrieve.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>whether a Proxy is currently registered with the given 
-          <code>proxyName</code>.</dd>
+        <dd>the <code>IProxy</code> instance previously registered with the 
+          given <code>proxyName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -323,8 +373,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Sep 22 01:31:51 2009
+    Generated by Epydoc 3.0.1 on Sun Oct 14 00:58:16 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

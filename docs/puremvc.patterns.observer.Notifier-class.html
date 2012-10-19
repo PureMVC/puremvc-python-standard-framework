@@ -42,9 +42,10 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="puremvc-module.html">Package&nbsp;puremvc</a> ::
-        <a href="puremvc.patterns-module.html">Package&nbsp;patterns</a> ::
-        <a href="puremvc.patterns.observer-module.html">Module&nbsp;observer</a> ::
+        puremvc ::
+        patterns ::
+        observer ::
+        Notifier ::
         Class&nbsp;Notifier
       </span>
     </td>
@@ -61,11 +62,11 @@
     </td>
   </tr>
 </table>
-<!-- ==================== TYPE DESCRIPTION ==================== -->
-<h1 class="epydoc">type Notifier</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.patterns.observer-pysrc.html#Notifier">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Notifier</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.patterns.observer-pysrc.html#Notifier">source&nbsp;code</a></span></p>
 <pre class="base-tree">
-              object --+
-                       |
+          object --+    
+                   |    
 <a href="puremvc.interfaces.INotifier-class.html">interfaces.INotifier</a> --+
                        |
                       <strong class="uidshort">Notifier</strong>
@@ -74,7 +75,7 @@
 <dl><dt>Known Subclasses:</dt>
 <dd>
       <ul class="subclass-list">
-<li><a href="puremvc.patterns.mediator.Mediator-class.html">mediator.Mediator</a></li><li>, <a href="puremvc.patterns.proxy.Proxy-class.html">proxy.Proxy</a></li><li>, <a href="puremvc.patterns.command.MacroCommand-class.html">command.MacroCommand</a></li><li>, <a href="puremvc.patterns.command.SimpleCommand-class.html">command.SimpleCommand</a></li>  </ul>
+<li><a href="puremvc.patterns.proxy.Proxy-class.html">proxy.Proxy</a></li><li>, <a href="puremvc.patterns.command.MacroCommand-class.html">command.MacroCommand</a></li><li>, <a href="puremvc.patterns.command.SimpleCommand-class.html">command.SimpleCommand</a></li><li>, <a href="puremvc.patterns.mediator.Mediator-class.html">mediator.Mediator</a></li>  </ul>
 </dd></dl>
 
 <hr />
@@ -86,7 +87,7 @@
   necessity to actually construct <code>Notifications</code>.</p>
   <p>The <code>Notifier</code> class, which all of the above mentioned 
   classes extend, provides an initialized reference to the 
-  <code>Facade</code> Singleton, which is required for the convienience 
+  <code>Facade</code> Singleton, which is required for the convenience 
   method for sending <code>Notifications</code>, but also eases 
   implementation as these classes have frequent <code>Facade</code> 
   interactions and usually require access to the facade anyway.</p>
@@ -149,7 +150,7 @@
           <td><span class="summary-sig"><a href="puremvc.patterns.observer.Notifier-class.html#sendNotification" class="summary-sig-name">sendNotification</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">notificationName</span>,
         <span class="summary-sig-arg">body</span>=<span class="summary-sig-default">None</span>,
-        <span class="summary-sig-arg">type</span>=<span class="summary-sig-default">None</span>)</span><br />
+        <span class="summary-sig-arg">noteType</span>=<span class="summary-sig-default">None</span>)</span><br />
       Create and send an <code>INotification</code>.</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.patterns.observer-pysrc.html#Notifier.sendNotification">source&nbsp;code</a></span>
@@ -160,29 +161,47 @@
       
     </td>
   </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
 </table>
-<!-- ==================== CLASS VARIABLES ==================== -->
-<a name="section-ClassVariables"></a>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
 <table class="summary" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr bgcolor="#70b0f0" class="table-header">
   <td colspan="2" class="table-header">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr valign="top">
-        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="left"><span class="table-header">Properties</span></td>
         <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariables"
+         ><span class="options">[<a href="#section-Properties"
          class="privatelink" onclick="toggle_private();"
          >hide private</a>]</span></td>
       </tr>
     </table>
   </td>
 </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="facade"></a><span class="summary-name">facade</span> = <code title="None">None</code>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
     </td>
   </tr>
 </table>
@@ -237,7 +256,7 @@
   <h3 class="epydoc"><span class="sig"><span class="sig-name">sendNotification</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">notificationName</span>,
         <span class="sig-arg">body</span>=<span class="sig-default">None</span>,
-        <span class="sig-arg">type</span>=<span class="sig-default">None</span>)</span>
+        <span class="sig-arg">noteType</span>=<span class="sig-default">None</span>)</span>
   </h3>
   </td><td align="right" valign="top"
     ><span class="codelink"><a href="puremvc.patterns.observer-pysrc.html#Notifier.sendNotification">source&nbsp;code</a></span>&nbsp;
@@ -250,9 +269,9 @@
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the notiification to send</li>
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the notification to send</li>
         <li><strong class="pname"><code>body</code></strong> - the body of the notification (optional)</li>
-        <li><strong class="pname"><code>type</code></strong> - the type of the notification (optional)</li>
+        <li><strong class="pname"><code>noteType</code></strong> - the type of the notification (optional)</li>
     </ul></dd>
     <dt>Overrides:
         <a href="puremvc.interfaces.INotifier-class.html#sendNotification">interfaces.INotifier.sendNotification</a>
@@ -292,8 +311,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Sep 22 01:31:51 2009
+    Generated by Epydoc 3.0.1 on Sun Oct 14 00:58:16 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

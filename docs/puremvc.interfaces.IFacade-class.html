@@ -60,8 +60,16 @@
     </td>
   </tr>
 </table>
-<!-- ==================== CLASSOBJ DESCRIPTION ==================== -->
-<h1 class="epydoc">classobj IFacade</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade">source&nbsp;code</a></span></p>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class IFacade</h1><p class="nomargin-top"><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+    
+         |    
+ <a href="puremvc.interfaces.INotifier-class.html">INotifier</a> --+
+             |
+            <strong class="uidshort">IFacade</strong>
+</pre>
+
 <dl><dt>Known Subclasses:</dt>
 <dd>
       <ul class="subclass-list">
@@ -113,12 +121,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#notifyObservers" class="summary-sig-name">notifyObservers</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">note</span>)</span><br />
-      Notify the <code>IObserver</code>s for a particular 
-      <code>INotification</code>.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#hasCommand" class="summary-sig-name">hasCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>)</span><br />
+      Check if a Command is registered for a given Notification</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.notifyObservers">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasCommand">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -132,48 +139,11 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#registerProxy" class="summary-sig-name">registerProxy</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">proxy</span>)</span><br />
-      Register an <code>IProxy</code> with the <code>Model</code> by name.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#hasMediator" class="summary-sig-name">hasMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Check if a Mediator is registered or not.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerProxy">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#retreieveProxy" class="summary-sig-name">retreieveProxy</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">proxyName</span>)</span><br />
-      Retrieve a <code>IProxy</code> from the <code>Model</code> by name.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retreieveProxy">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#removeProxy" class="summary-sig-name">removeProxy</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">proxyName</span>)</span><br />
-      Remove an <code>IProxy</code> instance from the <code>Model</code> by
-      name.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeProxy">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasMediator">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -192,6 +162,25 @@
       Check if a Proxy is registered</td>
           <td align="right" valign="top">
             <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#notifyObservers" class="summary-sig-name">notifyObservers</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">note</span>)</span><br />
+      Notify the <code>IObserver</code>s for a particular 
+      <code>INotification</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.notifyObservers">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -224,43 +213,6 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#removeCommand" class="summary-sig-name">removeCommand</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notificationName</span>)</span><br />
-      Remove a previously registered <code>ICommand</code> to 
-      <code>INotification</code> mapping from the Controller.</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeCommand">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#hasCommand" class="summary-sig-name">hasCommand</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">notificationName</span>)</span><br />
-      Check if a Command is registered for a given Notification</td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasCommand">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
           <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#registerMediator" class="summary-sig-name">registerMediator</a>(<span class="summary-sig-arg">self</span>,
         <span class="summary-sig-arg">mediator</span>)</span><br />
       Register an <code>IMediator</code> instance with the 
@@ -280,12 +232,30 @@
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#retreieveMediator" class="summary-sig-name">retreieveMediator</a>(<span class="summary-sig-arg">self</span>,
-        <span class="summary-sig-arg">mediatorName</span>)</span><br />
-      Retrieve an <code>IMediator</code> instance from the 
-      <code>View</code>.</td>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#registerProxy" class="summary-sig-name">registerProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxy</span>)</span><br />
+      Register an <code>IProxy</code> with the <code>Model</code> by name.</td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retreieveMediator">source&nbsp;code</a></span>
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#removeCommand" class="summary-sig-name">removeCommand</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">notificationName</span>)</span><br />
+      Remove a previously registered <code>ICommand</code> to 
+      <code>INotification</code> mapping from the Controller.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeCommand">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -311,6 +281,109 @@
       
     </td>
   </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#removeProxy" class="summary-sig-name">removeProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Remove an <code>IProxy</code> instance from the <code>Model</code> by
+      name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#retrieveMediator" class="summary-sig-name">retrieveMediator</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mediatorName</span>)</span><br />
+      Retrieve an <code>IMediator</code> instance from the 
+      <code>View</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retrieveMediator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="puremvc.interfaces.IFacade-class.html#retrieveProxy" class="summary-sig-name">retrieveProxy</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">proxyName</span>)</span><br />
+      Retrieve a <code>IProxy</code> from the <code>Model</code> by name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retrieveProxy">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="puremvc.interfaces.INotifier-class.html">INotifier</a></code></b>:
+      <code><a href="puremvc.interfaces.INotifier-class.html#sendNotification">sendNotification</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__init__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
 </table>
 <!-- ==================== METHOD DETAILS ==================== -->
 <a name="section-MethodDetails"></a>
@@ -330,6 +403,89 @@
   </td>
 </tr>
 </table>
+<a name="hasCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Command is registered for a given Notification</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Command is currently registered for the given 
+          <code>notificationName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Mediator is registered or not.</p>
+  <p>Raises <code>NotImplemented</code> if subclass does not implement this
+  method.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - the name of the <code>INotification</code></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Mediator is registered with the given 
+          <code>mediatorName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasProxy"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasProxy">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if a Proxy is registered</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>proxyName</code></strong></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>whether a Proxy is currently registered with the given 
+          <code>proxyName</code>.</dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="notifyObservers"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -362,6 +518,60 @@
   </dl>
 </td></tr></table>
 </div>
+<a name="registerCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">noteName</span>,
+        <span class="sig-arg">commandClassRef</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>ICommand</code> with the 
+  <code>Controller</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>noteName</code></strong> - the name of the <code>INotification</code> to associate the 
+          <code>ICommand</code> with.</li>
+        <li><strong class="pname"><code>commandClassRef</code></strong> - a reference to the <code>Class</code> of the 
+          <code>ICommand</code>.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="registerMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediator</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Register an <code>IMediator</code> instance with the 
+  <code>View</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediator</code></strong> - a reference to the <code>Mediator</code> instance</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
 <a name="registerProxy"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
@@ -388,31 +598,57 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="retreieveProxy"></a>
+<a name="removeCommand"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">retreieveProxy</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">proxyName</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCommand</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">notificationName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retreieveProxy">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeCommand">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Retrieve a <code>IProxy</code> from the <code>Model</code> by 
-  name.</p>
+  <p>Remove a previously registered <code>ICommand</code> to 
+  <code>INotification</code> mapping from the Controller.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>proxyName</code></strong> - the name of the <code>IProxy</code> instance to be retrieved.</li>
+        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to remove the 
+          <code>ICommand</code> mapping for</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeMediator"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMediator</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mediatorName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeMediator">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a <code>IMediator</code> instance from the 
+  <code>View</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code> instance to be removed.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>the <code>IProxy</code> previously regisetered by 
-          <code>proxyName</code> with the <code>Model</code>.</dd>
+        <dd>the <code>IMediator</code> instance previously registered with 
+          the given <code>mediatorName</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -444,152 +680,18 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="hasProxy"></a>
+<a name="retrieveMediator"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasProxy</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">proxyName</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasProxy">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Check if a Proxy is registered</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>proxyName</code></strong></li>
-    </ul></dd>
-    <dt>Returns:</dt>
-        <dd>whether a Proxy is currently registered with the given 
-          <code>proxyName</code>.</dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="registerCommand"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerCommand</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">noteName</span>,
-        <span class="sig-arg">commandClassRef</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerCommand">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Register an <code>ICommand</code> with the 
-  <code>Controller</code>.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>noteName</code></strong> - the name of the <code>INotification</code> to associate the 
-          <code>ICommand</code> with.</li>
-        <li><strong class="pname"><code>commandClassRef</code></strong> - a reference to the <code>Class</code> of the 
-          <code>ICommand</code>.</li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="removeCommand"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeCommand</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notificationName</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeCommand">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Remove a previously registered <code>ICommand</code> to 
-  <code>INotification</code> mapping from the Controller.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code> to remove the 
-          <code>ICommand</code> mapping for</li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="hasCommand"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasCommand</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">notificationName</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.hasCommand">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Check if a Command is registered for a given Notification</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>notificationName</code></strong> - the name of the <code>INotification</code></li>
-    </ul></dd>
-    <dt>Returns:</dt>
-        <dd>whether a Command is currently registered for the given 
-          <code>notificationName</code>.</dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="registerMediator"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">registerMediator</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">mediator</span>)</span>
-  </h3>
-  </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.registerMediator">source&nbsp;code</a></span>&nbsp;
-    </td>
-  </tr></table>
-  
-  <p>Register an <code>IMediator</code> instance with the 
-  <code>View</code>.</p>
-  <dl class="fields">
-    <dt>Parameters:</dt>
-    <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>mediator</code></strong> - a reference to the <code>Mediator</code> instance</li>
-    </ul></dd>
-  </dl>
-</td></tr></table>
-</div>
-<a name="retreieveMediator"></a>
-<div>
-<table class="details" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr><td>
-  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">retreieveMediator</span>(<span class="sig-arg">self</span>,
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveMediator</span>(<span class="sig-arg">self</span>,
         <span class="sig-arg">mediatorName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retreieveMediator">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retrieveMediator">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
@@ -606,31 +708,31 @@
   </dl>
 </td></tr></table>
 </div>
-<a name="removeMediator"></a>
+<a name="retrieveProxy"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
   <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr valign="top"><td>
-  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMediator</span>(<span class="sig-arg">self</span>,
-        <span class="sig-arg">mediatorName</span>)</span>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">retrieveProxy</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">proxyName</span>)</span>
   </h3>
   </td><td align="right" valign="top"
-    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.removeMediator">source&nbsp;code</a></span>&nbsp;
+    ><span class="codelink"><a href="puremvc.interfaces-pysrc.html#IFacade.retrieveProxy">source&nbsp;code</a></span>&nbsp;
     </td>
   </tr></table>
   
-  <p>Remove a <code>IMediator</code> instance from the 
-  <code>View</code>.</p>
+  <p>Retrieve a <code>IProxy</code> from the <code>Model</code> by 
+  name.</p>
   <dl class="fields">
     <dt>Parameters:</dt>
     <dd><ul class="nomargin-top">
-        <li><strong class="pname"><code>mediatorName</code></strong> - name of the <code>IMediator</code> instance to be removed.</li>
+        <li><strong class="pname"><code>proxyName</code></strong> - the name of the <code>IProxy</code> instance to be retrieved.</li>
     </ul></dd>
     <dt>Returns:</dt>
-        <dd>the <code>IMediator</code> instance previously registered with 
-          the given <code>mediatorName</code>.</dd>
+        <dd>the <code>IProxy</code> previously registered by 
+          <code>proxyName</code> with the <code>Model</code>.</dd>
   </dl>
 </td></tr></table>
 </div>
@@ -666,8 +768,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1
-    on Tue Sep 22 01:31:51 2009
+    Generated by Epydoc 3.0.1 on Sun Oct 14 00:58:16 2012
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

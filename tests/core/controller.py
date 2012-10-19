@@ -1,17 +1,17 @@
 import unittest
 import puremvc.interfaces
 import puremvc.patterns.observer
-import puremvc.core 
+import puremvc.core
 import utils.controller
 
 class ControllerTest(unittest.TestCase):
     """ControllerTest: Test Controller Singleton"""
-    def assertNotNone(self):
+    def testAssertNotNone(self):
         """ControllerTest: Test instance not null"""
         controller = puremvc.core.Controller.getInstance()
-        self.assertNotEqual(None, controller) 
+        self.assertNotEqual(None, controller)
 
-    def assertIController(self):
+    def testAssertIController(self):
         """ControllerTest: Test instance implements IController"""
         controller = puremvc.core.Controller.getInstance()
         self.assertEqual(True, isinstance(controller, puremvc.interfaces.IController))
@@ -20,15 +20,15 @@ class ControllerTest(unittest.TestCase):
         """ControllerTest: Test registerCommand() and executeCommand()"""
         controller = puremvc.core.Controller.getInstance()
         controller.registerCommand('ControllerTest', utils.controller.ControllerTestCommand)
-        
+
         vo = utils.controller.ControllerTestVO(12)
         note = puremvc.patterns.observer.Notification('ControllerTest', vo)
 
         controller.executeCommand(note)
-        
+
         self.assertEqual(True, vo.result == 24 )
-          
-    def testRegisterAndRemoveCommand(self): 
+
+    def testRegisterAndRemoveCommand(self):
         """ControllerTest: Test registerCommand() and removeCommand()"""
         controller = puremvc.core.Controller.getInstance()
         controller.registerCommand('ControllerRemoveTest', utils.controller.ControllerTestCommand)
@@ -46,10 +46,10 @@ class ControllerTest(unittest.TestCase):
         controller.executeCommand(note)
 
         self.assertEqual(True, vo.result == 0)
-             
-    def testHasCommand(self): 
+
+    def testHasCommand(self):
         """ControllerTest: Test hasCommand()"""
-        
+
         controller = puremvc.core.Controller.getInstance()
         controller.registerCommand('hasCommandTest', utils.controller.ControllerTestCommand)
 
