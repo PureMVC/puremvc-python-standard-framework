@@ -10,6 +10,23 @@ Release Date: 03/16/09
      License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
 
+1.3 - * Fixed name clashes with built-in types
+      * Refactored unit test primer to auto-load unit tests
+      * Fixed bug in MacroCommand.execute() where the list of commands was
+        consumed after the first execution
+      * Set proxy data anyway because some objects (like an empty strings,
+        lists, dicts, etc) can fail the if statement method
+      * Always use instance attributes instead of class level attributes
+      * Refactored Facade.removeProxy() method
+      * Added missing IView.removeObserver() method
+      * Added missing Facade.hasMediator method
+      * Raise from interface classes NotImplementedError(self) for verbose
+        exception
+      * Missing inheritance from INotifier for facade, command and mediator
+        interfaces
+      * dict.get() returns None by default if no key was found
+      * Use "is" instead of "=" operator when comparing to None
+
 1.2 - * Added install command to fab file
       * Renamed tests folder
       * Ignore build dir
