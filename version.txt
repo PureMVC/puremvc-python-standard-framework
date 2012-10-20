@@ -24,7 +24,7 @@ Release Date: 03/16/09
       Fixed FIFO bug in MacroCommand.execute()
       Fixed typo in Proxy docstring
 
-1.0 - updated in sync with release 2.0.4 of the AS3 Standard pagacke
+1.0 - updated in sync with release 2.0.4 of the AS3 Standard package
       Added a fabfile to build documentation and unit tests (http://www.fabfile.org/)
 
 0.6 - update in sync with releases 2.0.2 and 2.0.3 of the AS3
