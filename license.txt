@@ -2,10 +2,10 @@ PureMVC Port to Python by Toby de Havilland <toby.de.havilland@puremvc.org>
 PureMVC - Copyright(c) 2006-08 Futurescale, Inc., Some rights reserved.
 --------------------------------------------------------------------------
  Reuse governed by Creative Commons Attribution 3.0 United States License
-   View this license and the associated Creative Commons deed online at: 
+   View this license and the associated Creative Commons deed online at:
             http://creativecommons.org/licenses/by/3.0/us/
-            	You must leave all copyright and license 
-            	statements intact in your final product.
+                You must leave all copyright and license
+                statements intact in your final product.
 --------------------------------------------------------------------------
 License
 
