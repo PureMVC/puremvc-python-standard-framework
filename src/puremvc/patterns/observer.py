@@ -139,7 +139,7 @@ class Notifier(puremvc.interfaces.INotifier):
         @param body: the body of the notification (optional)
         @param noteType: the type of the notification (optional)
         """
-        self.facade.sendNotification(notificationName, body, type)
+        self.facade.sendNotification(notificationName, body, noteType)
 
 
 class Notification(puremvc.interfaces.INotification):
