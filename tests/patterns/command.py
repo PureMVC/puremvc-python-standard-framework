@@ -1,5 +1,7 @@
 import unittest
+import sys
 
+sys.path.insert(1, "src")
 import puremvc.patterns.observer
 import utils.command
 
@@ -12,7 +14,7 @@ class CommandTest(unittest.TestCase):
         vo = utils.command.MacroCommandTestVO(5)
         note = puremvc.patterns.observer.Notification('MacroCommandTest', vo)
         command = utils.command.MacroCommandTestCommand()
-        command.execute(note);
+        command.execute(note)
 
         self.assertEqual(True, vo.result1 == 10)
         self.assertEqual(True, vo.result2 == 25)
@@ -23,6 +25,6 @@ class CommandTest(unittest.TestCase):
         vo = utils.command.SimpleCommandTestVO(5)
         note = puremvc.patterns.observer.Notification('SimpleCommandTestNote', vo)
         command = utils.command.SimpleCommandTestCommand()
-        command.execute(note);
+        command.execute(note)
 
         self.assertEqual(True, vo.result == 10)

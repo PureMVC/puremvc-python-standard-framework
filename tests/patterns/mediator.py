@@ -1,5 +1,7 @@
 import unittest
+import sys
 
+sys.path.insert(1, "src")
 import puremvc.patterns.mediator as mediator
 
 class MediatorTest(unittest.TestCase):

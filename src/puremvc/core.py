@@ -369,6 +369,9 @@ class View(puremvc.interfaces.IView):
         @param mediatorName: name of the C{IMediator} instance to be removed.
         @return: the C{IMediator} that was removed from the C{View}
         """
+        
+        deleteList=[]#list to collect all items needed to be delete
+
         for notificationName in self.observerMap.keys():
             observers = self.observerMap[notificationName]
             for i in range(len(observers)-1, -1, -1):
@@ -376,7 +379,12 @@ class View(puremvc.interfaces.IView):
                     observers.pop(i)
 
             if len(observers) == 0:
-                del self.observerMap[notificationName]
+                deleteList.append(notificationName)#instead of delete put on a list
+                #del self.observerMap[notificationName]
+
+        #delete all in once to avoid error of collection change
+        for item in deleteList:
+            del self.observerMap[item]
 
         mediator = self.mediatorMap.get(mediatorName)
 
