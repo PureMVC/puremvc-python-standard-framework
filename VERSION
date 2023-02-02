@@ -3,11 +3,11 @@ PureMVC Standard Framework for Python (Ported)
 Release Date: 03/16/09
     Platform: Python 2.5
      Version: 1
-    Revision: 2
+    Revision: 4
        Minor: 0
       Author: Toby de Havilland <toby.de.havilland@puremvc.org>
 --------------------------------------------------------------------------
-
+1.4 - * Fixed iteraion in dict and Tests to be identified by vscode
 1.3 - * Fixed name clashes with built-in types
       * Refactored unit test primer to auto-load unit tests
       * Fixed bug in MacroCommand.execute() where the list of commands was
