@@ -3,7 +3,7 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 
 The unit tests are included in this repository.
 
-* [API Docs](http://puremvc.org/pages/docs/Python/docs)
+* [API Docs](http://puremvc.org/pages/docs/Python/legacy/standard)
 * [Discussion](http://forums.puremvc.org/index.php?board=76.0)
 * [Overview Presentation](http://puremvc.tv/#P100)
 
@@ -16,4 +16,4 @@ The unit tests are included in this repository.
 Production - [Version 1.3](https://github.com/PureMVC/puremvc-python-standard-framework/pull/1)
 
 ## Platforms / Technologies
-* [Python](http://en.wikipedia.org/wiki/Python_(programming_language\))
+* [Python](http://en.wikipedia.org/wiki/Python_(programming_language))
